@@ -1,0 +1,15 @@
+.intro__double-cloud{
+    position: absolute;
+    z-index: 3;
+}
+
+.intro__double-cloud--s{
+    height: clamp(2.5vw, 4rem, 12vw);
+    width: clamp(2.5vw, 4rem, 12vw);
+    opacity: 0.9;
+}
+
+.intro__double-cloud--t20-l5{
+    top: 20%;
+    left: 5%;
+}

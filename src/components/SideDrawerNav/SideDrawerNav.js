@@ -5,7 +5,7 @@ import './SideDrawerNav.scss';
 const SideDrawerNav = (props) => {
     let drawerClasses = 'side-drawer';
 
-    if(props.display) drawerClasses += ' open';
+    if(props.display) drawerClasses += ' side-drawer--open';
 
     return(
         <nav className={drawerClasses}>

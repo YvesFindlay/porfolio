@@ -38,8 +38,6 @@ const Mountains = () => {
           id="Mountains_svg__filter0_d"
           x={-16.977}
           y={374.848}
-          width={1531.88}
-          height={410.368}
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >

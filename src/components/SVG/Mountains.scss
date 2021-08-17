@@ -1,0 +1,28 @@
+.intro__mountains{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+
+  height: 100vh;
+  width: 100vw;
+  
+
+  .intro__mountains__mountain-1{
+    transform: translateY(-2rem);
+
+  }
+  
+  .intro__mountains__mountain-2{
+    transform: translateY(-4rem);
+  }
+
+  .intro__mountains__mountain-3{
+    transform: translateY(-9.5rem);
+  }
+  
+  .intro__mountains__mountain-4{
+    transform: translateY(-15rem);
+  }
+
+}

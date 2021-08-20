@@ -1,0 +1,41 @@
+$breakpoint-s: 60em;
+
+@mixin media($width) {
+    @media only screen and (max-width: $width) {
+      @content;
+    }
+}
+
+@mixin for-size($size) {
+    @if $size == phone-only {
+        @media only screen 
+        and (min-device-width: 280px) 
+        and (max-device-width: 667px)
+        and (-webkit-min-device-pixel-ratio: 2)
+        and (orientation: portrait) 
+      { @content; }
+     }@else if $size == tablets {
+        @media only screen 
+        and (min-device-width: 768px) 
+        and (max-device-width: 1400px) 
+        and (-webkit-min-device-pixel-ratio: 2)
+        and (orientation: portrait) 
+        { @content; }
+     }@else if $size == big-desktop-up {
+      @media (min-width: 3000px) { @content; }
+    }
+}
+
+.intro__train{
+    position: absolute;
+    z-index: 6;
+    top: -23.5%;
+    left: -40%;
+    height: 3vh;
+    
+    @include for-size(phone-only) {
+        // transform: translateY(-2rem);
+        // height: 2.5vh;
+        // width: 100%;
+    }
+}

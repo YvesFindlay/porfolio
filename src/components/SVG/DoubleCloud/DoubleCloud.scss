@@ -1,0 +1,20 @@
+@mixin opacity($n) {
+    opacity: $n;
+}
+
+.intro__double-cloud{
+    position: absolute;
+    z-index: 3;
+}
+
+.intro__double-cloud--s{
+    height: clamp(2.5vw, 4rem, 8vw);
+    width: clamp(2.5vw, 4rem, 8vw);
+    opacity: 0.9;
+}
+
+.intro__double-cloud--t20-l5{
+    top: 30%;
+    left: 5%;
+    @include opacity(0.7);
+}

@@ -1,15 +1,13 @@
 .toggle-button{
     height: 2.5rem;
-    width: 3rem;
+    width: 3.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    position: relative;
     background: none;
     border: none;
-    box-sizing: border-box;
-
 
     &:focus{
         outline: none;
@@ -17,21 +15,26 @@
 
     .toggle-button__line {
         width: 100%;
+        position: absolute;
         background: #ffffff;
-        height: 3px;
-        
+        height: 2px;
+    }
 
-        &:first-of-type, &:last-of-type{
-            width: 50%;
-        }
+    &::before, &::after {
+        position: absolute;
+        content: '';
+        width: 50%;
+        height: 2px;
+        background: #ffffff;
+    }
 
-        &:first-of-type{
-            align-self: flex-end;
-        }
+    &::before {
+        top: 10%;
+        left: 0;
+    }
 
-        &:last-of-type{
-            align-self: flex-start;
-        }
-
+    &::after {
+        bottom: 10%;
+        left: 50%;
     }
 }

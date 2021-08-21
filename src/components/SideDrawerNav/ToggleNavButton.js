@@ -6,8 +6,6 @@ const ToggleNavButton = (props) => {
     return(
         <button onClick={props.onClick} className="toggle-button">
            <div className="toggle-button__line" />
-           <div className="toggle-button__line" />
-           <div className="toggle-button__line" />
         </button>
     )
 }

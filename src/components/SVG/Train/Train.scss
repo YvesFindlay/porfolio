@@ -29,13 +29,14 @@ $breakpoint-s: 60em;
 .intro__train{
     position: absolute;
     z-index: 6;
-    top: -23.5%;
-    left: -40%;
-    height: 3vh;
-    
+    top: -20.8%;
+    left: -30%;
+    height: 4.5vh;
+    width: 100vw;
+    // border: 1px solid gold;
+
     @include for-size(phone-only) {
         // transform: translateY(-2rem);
         // height: 2.5vh;
-        // width: 100%;
     }
 }

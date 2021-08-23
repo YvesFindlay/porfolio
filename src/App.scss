@@ -1,22 +1,8 @@
 $color-primary-dark: #1F1F3D;
-$color-primary-purple: #6C63FF;
-$color-secondary-purple: #6B6BDE;
-$color-tertiary-purple: #45419D;
-$color-primary-lightblue: #83D4ED;
 
 .app{
-  background: radial-gradient(120% 79% at 80% 80%, #A259FF 0%, #6B6BDE 50.19%, #6C63FF 62.9%, #45419D 80.21%, #16162c 102%);
-  background-size: 138%;
+  position: relative;
+  z-index: 1;
   height: 100vh;
 }
 
-.circle{
-  border-radius: 50%;
-  background: gold;
-  position: absolute;
-  z-index: 2;
-  top: 20%;
-  left: 40%;
-  height: 2rem;
-  width: 2rem;
-}

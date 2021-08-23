@@ -9,7 +9,7 @@ import Bridge from '../SVG/Bridge/Bridge';
 import StarXS from '../SVG/Stars/StarXS';
 import StarS from '../SVG/Stars/StarS';
 import StarM from '../SVG/Stars/StarM';
-import TrafficLights from '../SVG/TrafficLights/TrafficLights';
+import TrainLights from '../SVG/TrainLights/TrainLights';
 import Train from '../SVG/Train/Train';
 
 import './Intro.scss';
@@ -32,7 +32,7 @@ const Sky = (props) => {
             <TripleCloud size='intro__triple-cloud--m' pos='intro__triple-cloud--t28-r18' />
             <Mountains />
             <Bridge> <Train/></Bridge>
-            <TrafficLights />
+            <TrainLights />
         </main>
     )
 }

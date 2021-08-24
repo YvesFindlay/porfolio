@@ -1,9 +1,7 @@
 import React from 'react';
 
 import Moon from '../SVG/Moon/Moon';
-import SingleCloud from '../SVG/SingleCloud/SingleCloud';
-import DoubleCloud from '../SVG/DoubleCloud/DoubleCloud';
-import TripleCloud from '../SVG/TripleCloud/TripleCloud';
+import Cloud from '../SVG/Cloud/Cloud';
 import Mountains from '../SVG/Mountains/Mountains';
 import Bridge from '../SVG/Bridge/Bridge';
 import StarXS from '../SVG/Stars/StarXS';
@@ -11,10 +9,11 @@ import StarS from '../SVG/Stars/StarS';
 import StarM from '../SVG/Stars/StarM';
 import TrainLights from '../SVG/TrainLights/TrainLights';
 import Train from '../SVG/Train/Train';
+import TrainSign from '../SVG/TrainSign/TrainSign';
 
 import './Intro.scss';
 
-const Sky = (props) => {    
+const Sky = () => {    
 
     return (
         <main className="intro">
@@ -22,16 +21,20 @@ const Sky = (props) => {
             <StarXS />
             <StarS />
             <StarM />
-            <SingleCloud size='intro__single-cloud--xxs' pos='intro__single-cloud--t16-l15' />
-            <SingleCloud size='intro__single-cloud--xs' pos='intro__single-cloud--t18-l55' />
-            <DoubleCloud size='intro__double-cloud--s' pos='intro__double-cloud--t20-l5'/>
-            <SingleCloud size='intro__single-cloud--xs' pos='intro__single-cloud--t5-r30' />
-            <SingleCloud size='intro__single-cloud--s' pos='intro__single-cloud--t20-r30' />
-            <SingleCloud size='intro__single-cloud--xs' pos='intro__single-cloud--t10-r50' flip={true} />
-            <SingleCloud size='intro__single-cloud--xs' pos='intro__single-cloud--t20-r2' flip={true} />
-            <TripleCloud size='intro__triple-cloud--m' pos='intro__triple-cloud--t28-r18' />
+            <Cloud size='intro__cloud--xs' pos='cloud1' cloudID={1} />
+            <Cloud size='intro__cloud--s' pos='cloud2' cloudID={2} />
+            <Cloud size='intro__cloud--m' pos='cloud3' cloudID={3} />
+            <Cloud size='intro__cloud--s' pos='cloud4' cloudID={4} />
+            <Cloud size='intro__cloud--xs' pos='cloud5' cloudID={5} /> 
+            <Cloud size='intro__cloud--m' pos='cloud6' cloudID={6} /> 
+            <Cloud size='intro__cloud--s' pos='cloud9' cloudID={9} /> 
+            <Cloud size='intro__cloud--m' pos='cloud10' cloudID={10} /> 
+            <Cloud size='intro__triple-cloud--m' pos='triple-cloud' cloudID='triple' />
             <Mountains />
-            <Bridge> <Train/></Bridge>
+            <Bridge> 
+              <Train/>
+              <TrainSign />
+            </Bridge>
             <TrainLights />
         </main>
     )

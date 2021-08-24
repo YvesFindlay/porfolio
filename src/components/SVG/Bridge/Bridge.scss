@@ -8,12 +8,13 @@ $breakpoint-s: 600px;
 
 .intro__bridge-container{
     position: relative;
+    z-index: 5;
     top: 80%;
     height: 20vh;
-    z-index: 5;
 
     .intro__bridge{
         position: absolute;
+        z-index: 6;
         top: 0;
         left: 0;
         height: inherit;

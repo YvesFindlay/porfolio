@@ -6,17 +6,17 @@ const cloud = (props) => {
     let cloudClasses = `intro__cloud intro__cloud--color ${props.size} ${props.pos}`
 
     const cloudGradient = {
-        fillUrl: `url(#paint1_linear)`,
+        fillUrl: `url(#paint4_linear)`,
         gradientComponent: 
             <defs>
-                <linearGradient id="paint0_linear" x1="263.523" y1="162.91" x2="259.547" y2="426.858" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#D4F7FF"/>
-                    <stop offset="1" stop-color="#A2E3E9"/>
+                <linearGradient id="paint4_linear" x1="263.523" y1="162.91" x2="259.547" y2="426.858" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#D4F7FF"/>
+                    <stop offset="1" stopColor="#A2E3E9"/>
                 </linearGradient>
-                <linearGradient id="paint1_linear" x1="266.74" y1="47.535" x2="260.482" y2="453.442" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#D4F7FF"/>
-                    <stop offset="1" stop-color="#A2E3E9"/>
-                    </linearGradient>
+                <linearGradient id="paint5_linear" x1="266.74" y1="47.535" x2="260.482" y2="453.442" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#D4F7FF"/>
+                    <stop offset="1" stopColor="#A2E3E9"/>
+                </linearGradient>
             </defs>
     }
 

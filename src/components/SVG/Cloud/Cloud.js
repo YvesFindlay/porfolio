@@ -8,16 +8,16 @@ const cloud = (props) => {
     const cloudGradient = {
         fillUrl: `url(#paint4_linear)`,
         gradientComponent: 
-            <defs>
-                <linearGradient id="paint4_linear" x1="263.523" y1="162.91" x2="259.547" y2="426.858" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#D4F7FF"/>
-                    <stop offset="1" stopColor="#A2E3E9"/>
-                </linearGradient>
-                <linearGradient id="paint5_linear" x1="266.74" y1="47.535" x2="260.482" y2="453.442" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#D4F7FF"/>
-                    <stop offset="1" stopColor="#A2E3E9"/>
-                </linearGradient>
-            </defs>
+        <defs>
+            <linearGradient id="paint4_linear" x1="263.523" y1="162.91" x2="259.547" y2="426.858" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#A3D4F7"/>
+                <stop offset="1" stopColor="#83D4ED"/>
+            </linearGradient>
+            <linearGradient id="paint5_linear" x1="266.74" y1="47.535" x2="260.482" y2="453.442" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#A3D4F7"/>
+                <stop offset="1" stopColor="#83D4ED"/>
+            </linearGradient>
+        </defs>
     }
 
     // Cloud Dictionary:
@@ -65,12 +65,10 @@ const cloud = (props) => {
         return clouds['cloud' + cloudNum];
     }
 
-    
     return(
         <React.Fragment> 
             {getCloud(props.cloudID)}
         </React.Fragment>
-
     )
 }
     

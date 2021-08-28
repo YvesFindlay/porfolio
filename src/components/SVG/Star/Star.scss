@@ -4,234 +4,34 @@ $breakpoint-s: 60em;
 $breakpoint-m: 80em;
 $breakpoint-l: 120em;
 $breakpoint-xl: 200em;
-$star-size: "";
-$star-duration: "";
-$star-delay: "";
 
-@mixin rotate($n) {
-    transform: rotate($n);
-}
-
-@mixin opacity($n) {
-    opacity: $n;
-}
-
-@mixin for-size($size) {
-    @if $size == phone-only {
-        @media only screen 
-        and (min-device-width: 280px) 
-        and (max-device-width: 667px)
-        and (-webkit-min-device-pixel-ratio: 2)
-        and (orientation: portrait) 
-      { @content; }
-     }@else if $size == tablets {
-        @media only screen 
-        and (min-device-width: 768px) 
-        and (max-device-width: 1400px) 
-        and (-webkit-min-device-pixel-ratio: 2)
-        and (orientation: portrait) 
-        { @content; }
-     }@else if $size == big-desktop-up {
-      @media (min-width: 3000px) { @content; }
-    }
-}
-
-.intro__star-container{
+.intro__star-container {
     border-radius: 80% 30% 30% 10% / 74% 0;
     position: relative;
     z-index: 2;
     top: 8%;
     left: -10%;
-    height: 48vh;
+    height: 64vh;
     width: 120%;
-    overflow-y: hidden;
+    overflow-y: auto;
 
     .intro__star{
         position: absolute;
         z-index: 2;
-        animation: twinkle infinite alternate;
-        animation-duration: $star-duration;
-        animation-delay: $star-delay;
-        max-width: 6px;
-        max-height: 6px;
-    }
+        animation: twinkle 100 alternate;
+        animation-duration: var(--star-duration);
+        animation-delay:var(--star-delay);
 
-    @keyframes twinkle {
-        from {
-            transform: scale(1);
+        @keyframes twinkle {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+        
+            to {
+                opacity: 1;
+                transform: scale(1.5);
+            }
         }
-    
-        to {
-            transform: scale(1.5);
-        }
     }
 }
-
-// .intro__star--xs{
-//     @include opacity(0.4);
-//     height: 0.3%;
-//     width: 0.3%; 
-
-//     @include for-size(phone-only) {  
-//         @include opacity(0);  
-//         height: 0.6%;
-//         width: 0.6%;
-//     }
-
-//     @include for-size(tablets) {    
-//         @include opacity(0.2); 
-//         height: 0.9%;
-//         width: 0.9%;
-//     }
-    
-// }
-  
-// .intro__star--s{
-//     @include opacity(0.3);
-//     height: 0.5%;
-//     width: 0.5%;
-
-//     @include for-size(phone-only) {    
-//         height: 0.8%;
-//         width: 0.8%;
-//     }
-
-//     @include for-size(tablets) { 
-//         height: 0.6%;
-//         width: 0.6%;
-//     }
-    
-// }
-
-// .intro__star--m{
-//     @include opacity(0.6);
-//     height: 0.7%;
-//     width: 0.7%;
-
-//     @include for-size(phone-only) {    
-//         height: 1%;
-//         width: 1%;
-//     }
-
-//     @include for-size(tablets) {  
-//         height: 0.7%;
-//         width: 0.7%;
-//     }
-    
-// }
-
-// .intro__star--rotate{
-//     @include rotate(20deg);
-// }
-
-
-
-// @mixin for-size($size) {
-//     @if $size == phone-small {
-//       @media (max-width: 280px) { @content; }
-//     } @else if $size == phone-regular {
-//         @media (max-width: 414px) { @content; }
-//     } @else if $size == tablet-small {
-//       @media (max-width: 600px) { @content; }
-//     } @else if $size == tablet-regular {
-//         @media (max-width: 800px) { @content; }
-//     } @else if $size == desktop {
-//       @media (max-width: 1200px) { @content; }
-//     } @else if $size == big-desktop {
-//       @media (max-width: 3010px) { @content; }
-//     }
-// }
-
-.intro__star--xs{
-    @include for-size(big-desktop) {
-        @include opacity(0.2);
-        height: 4px;
-        width: 4px;
-    }
-
-    @include for-size(desktop) {
-        @include opacity(0.2);
-        height: 0.7vw;
-        width: 0.7vw;
-    }
-
-    @include for-size(tablet-regular) {
-        @include opacity(0.3);
-        height: 0.5vw;
-        width: 0.5vw;
-    }
-
-    @include for-size(tablet-small) {
-        @include opacity(0.2);
-        height: 0.7vw;
-        width: 0.7vw;
-    }
-
-    @include for-size(phone-regular) {   
-        @include opacity(0.3);
-        height: 1.1vw;
-        width: 1.1vw;
-        min-width: 10px;
-        min-height: 10px;
-    }    
-}
-  
-.intro__star--s{
-    @include for-size(desktop) {
-        @include opacity(0.5);
-        height: 0.4vw;
-        width: 0.4vw;
-    }
-
-    @include for-size(tablet-regular) {
-        @include opacity(0.6);
-        height: 0.7vw;
-        width: 0.7vw;
-    }
-
-    @include for-size(tablet-small) {
-        @include opacity(0.6);
-        height: 1vw;
-        width: 1vw;
-    }
-
-    @include for-size(phone-regular) {   
-        @include opacity(0.5);
-        height: 1.3vw;
-        width: 1.3vw;
-    }    
-}
-
-.intro__star--m{
-    @include for-size(desktop) {
-        @include opacity(0.7);
-        height: 0.6vw;
-        width: 0.6vw;
-    }
-
-    @include for-size(tablet-regular) {
-        @include opacity(0.7);
-        height: 0.8vw;
-        width: 0.8vw;
-    }
-
-    @include for-size(tablet-small) {
-        @include opacity(0.8);
-        height: 0.7vw;
-        width: 0.7vw;
-    }
-
-    @include for-size(phone-regular) {   
-        @include opacity(0.7);
-        height: 1.1vw;
-        width: 1.1vw;
-    }    
-
-    @include for-size(phone-regular) {   
-        @include opacity(0.7);
-        height: 1.2vw;
-        width: 1.2vw;
-    }    
-    
-}
-

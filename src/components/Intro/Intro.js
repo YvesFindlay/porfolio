@@ -22,14 +22,17 @@ const Sky = () => (
         <Cloud size='intro__cloud--xs' pos='cloud5' cloudID={5} /> 
         <Cloud size='intro__cloud--m' pos='cloud6' cloudID={6} /> 
         <Cloud size='intro__cloud--s' pos='cloud9' cloudID={9} /> 
-        <Cloud size='intro__cloud--m' pos='cloud10' cloudID={10} /> 
-        <Cloud size='intro__triple-cloud--m' pos='triple-cloud' cloudID='triple' />
+        <Cloud size='intro__cloud--m' pos='cloud10' cloudID={10} />  
         <Mountains />
-        <Bridge> 
+        <Bridge > 
             <Train />
-            <TrainSign />
-        </Bridge>
+        </Bridge> 
+        <TrainSign />
         <TrainLights />
+        <div className="intro__text">
+            <p>Hi there! .., I'm</p>
+            <h1>Yves</h1>
+        </div>
     </main>
 )
 

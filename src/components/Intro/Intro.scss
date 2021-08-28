@@ -1,11 +1,47 @@
+$breakpoint-xs: 280px;
+$breakpoint-s: 400px;
+$breakpoint-splus: 401px;
+$breakpoint-mplus: 600px;
+
 $color-primary-dark: #1F1F3D;
 $color-highlight-purple: #A259FF;
 $color-primary-purple: #6C63FF;
 $color-secondary-purple: #6B6BDE;
 $color-tertiary-purple: #45419D;
 $color-primary-lightblue: #83D4ED;
+$color-primary-text: #e5e5e5;
+$top-mob: 30%;
+$left-mob: 15%;
+$top-reg-mob: 30%;
+$left-reg-mob: 25%;
+$top-lg-mob: 32%;
 
-.intro{
+@mixin opacity($n) {
+    opacity: $n;
+}
+
+@mixin rotate($n) {
+    transform: rotate($n);
+}
+
+@mixin max-media($width) {
+    @media only screen and (max-width: $width) {
+      @content;
+    }
+}
+
+@mixin min-media($width) {
+    @media only screen and (min-width: $width) {
+      @content;
+    }
+}
+
+@mixin position($top, $left){
+    top: $top;
+    left: $left;
+}
+
+.intro {
     background: radial-gradient(120% 79% at 80% 80%, $color-highlight-purple 20%, $color-secondary-purple 50.19%, $color-primary-purple 68.9%, $color-tertiary-purple 80.21%, $color-primary-dark 96%);
     background-size: 138%;
     position: relative;
@@ -17,4 +53,63 @@ $color-primary-lightblue: #83D4ED;
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
+    color: $color-primary-text;;
+
+    .intro__text {
+        position: absolute;
+        left: 30%;
+        display: flex;
+        flex-direction: column;
+
+        @include min-media($breakpoint-splus){
+            @include position($top-reg-mob, $left-reg-mob);
+
+            p{
+                font-size: 4vh;
+            }
+
+            h1 {
+                font-size: 12vh;  
+            }
+
+        }
+
+        @include min-media($breakpoint-mplus){
+            @include position($top-lg-mob, $left-reg-mob);
+
+            p{
+                font-size: 4vh;
+            }
+
+            h1 {
+                font-size: 12vh;  
+            }
+
+        }
+
+        @include max-media($breakpoint-s){
+            @include position($top-mob, $left-mob);
+            
+            p{
+                font-size: 3.5vh;
+            }
+
+            h1 {
+                font-size: 11vh;  
+            }
+        }
+       
+        @include max-media($breakpoint-xs){
+            @include position($top-mob, $left-mob);
+
+            p{
+                font-size: 3.5vh;
+            }
+
+            h1 {
+                font-size: 10vh;  
+            }
+        }
+    }
 }
+

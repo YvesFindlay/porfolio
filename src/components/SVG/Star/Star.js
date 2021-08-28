@@ -2,16 +2,13 @@ import React, {useEffect, useRef} from 'react';
 
 import './Star.scss';
 
-const Star = (props) => {
+const Star = () => {
 
-  const amount = 400;
+  const amount = 250;
   const starDOM = useRef([]);
 
-  let starClasses = 'intro__star';
-  props.rotate && (starClasses += ' intro__star--rotate');
-
   const stars = new Array(amount).fill(0).map((_, ind) => (
-    <svg key={ind} ref={(element) => starDOM.current.push(element)} preserveAspectRatio="xMidYMid meet" className={starClasses} width="56" height="55" viewBox="0 0 56 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg key={ind} ref={(element) => starDOM.current.push(element)} preserveAspectRatio="xMidYMid meet" className='intro__star' width="56" height="55" viewBox="0 0 56 55" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M54.533 26.726L46.121 23.624C39.312 21.113 33.945 15.746 31.435 8.937L28.332 0.527C28.216 0.21 27.914 0 27.577 0C27.24 
                  0 26.938 0.21 26.822 0.526L23.72 8.935C21.209 15.744 15.841 21.112 9.03201 23.623L0.62001 26.725C0.30401 26.841 0.0940094 
                  27.143 0.0940094 27.48C0.0940094 27.817 0.30401 28.119 0.62001 28.235L9.03102 31.338C15.841 33.849 21.209 39.217 23.72 46.027L26.822 
@@ -22,7 +19,6 @@ const Star = (props) => {
 
   const randomNum = (min, max) => {
     return Math.random() * max - min + min;
-    // Math.trunc(
   }
 
   useEffect(() => {
@@ -37,29 +33,23 @@ const Star = (props) => {
       star.style.left = `${y}%`;
 
       // star svg dimensions
-      const randomSize = `${randomNum(0.3, 0.7)}%`; // mobile use px
+      const randomSize = `${randomNum(0.2, 0.7)}%`; // mobile use px
       star.style.height = randomSize;
       star.style.width = randomSize;
 
-      // star.style.setProperty(
-      //     "$star-duration",
-      //     Math.ceil(randomNum(1, 5)) + "s"
-      // );
+      star.style.setProperty('--star-duration', `${Math.ceil(randomNum(1, 5))}s`);
+      star.style.setProperty('--star-delay', `${Math.ceil(randomNum(1, 5))}s`);
 
-      // star.style.setProperty(
-      //     "$star-delay",
-      //     Math.ceil(randomNum(1, 5)) + "s"
-      // );
+      //console.log(star.style.getPropertyValue('--star-duration'));
     })
-
+    
     return () => {}
-  }, [starDOM]);
+  }, []);
 
   return (
     <div className="intro__star-container">
       {stars} 
     </div>
-   
   );
 }
 

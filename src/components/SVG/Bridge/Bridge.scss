@@ -9,7 +9,7 @@ $breakpoint-s: 600px;
 .intro__bridge-container{
     position: relative;
     z-index: 5;
-    top: 80%;
+    top: 16%;
     height: 20vh;
 
     .intro__bridge{
@@ -18,7 +18,7 @@ $breakpoint-s: 600px;
         top: 0;
         left: 0;
         height: inherit;
-        width: 100%;
+        width: 101%;
     
         @include media($breakpoint-s) {
             .intro__bridge__bottom{

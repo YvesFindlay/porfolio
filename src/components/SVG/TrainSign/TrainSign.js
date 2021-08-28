@@ -3,7 +3,7 @@ import React from 'react';
 import './TrainSign.scss';
 
 const TrainSign = () => (
-    <svg className="intro__train-sign" width="541" height="512" viewBox="0 0 541 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className="intro__train-sign" preserveAspectRatio="xMidYMid meet" width="541" height="512" viewBox="0 0 541 512" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M193.454 494.809H134.031V29.7683C134.031 13.3281 147.334 0 163.743 0C180.152 0 193.454 13.3281 193.454 29.7683V494.809Z" fill="url(#paint0_linear)"/>
         <path d="M149.696 184.63L191.616 208V183H149.696V184.63Z" fill="url(#paint1_linear)"/>
         <path d="M134.031 47.7035L193.454 107.24V43.5503H134.031V47.7035Z" fill="url(#paint2_linear)"/>

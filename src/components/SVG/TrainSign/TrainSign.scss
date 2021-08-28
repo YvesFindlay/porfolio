@@ -1,8 +1,28 @@
-.intro__train-sign {
+$breakpoint-s: 280px;
+$breakpoint-m: 700px;
+
+@mixin max-media($width) {
+    @media only screen and (max-width: $width) {
+      @content;
+    }
+}
+
+@mixin min-media($width) {
+    @media only screen and (min-width: $width) {
+      @content;
+    }
+}
+
+.intro__train-sign{
     position: absolute;
-    z-index: 5;
-    right: -1%;
-    top: -60%;
-    width: 20%;
-    height: 80%;
+    z-index: 3;
+    left: 20%;
+    bottom: -0.5%;
+    height: 50%;
+    width: 14vh;
+
+    @include min-media($breakpoint-m){
+        width: 18vh;
+        
+    }   
 }

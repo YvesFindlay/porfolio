@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import ToggleNavButton from '../SideDrawerNav/ToggleNavButton';
 
@@ -8,6 +8,19 @@ const Nav = (props) => {
     let navClasses = 'nav' 
     navClasses += props.drawerState ? " nav--transparent" : " nav--dark-bg";
 
+    const [isScrollYZero, setisScrollYZero] = useState(true);
+
+    const displayNav = () => navClasses.replace('hidden', '');
+    const hideNav = () => navClasses += ' hidden';
+
+    useEffect(() => {
+        window.onscroll = () => {
+            window.scrollY !== 0 ? setisScrollYZero(false) : setisScrollYZero(true);
+        }
+    }, []);
+
+    isScrollYZero ? displayNav() : hideNav();
+   
     return (
         <header className={navClasses}>
             <nav className="nav__navigation">

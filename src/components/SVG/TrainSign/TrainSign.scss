@@ -1,5 +1,6 @@
-$breakpoint-s: 280px;
-$breakpoint-m: 700px;
+$breakpoint-xs: 300px;
+$breakpoint-s: 540px;
+$breakpoint-mplus: 700px;
 
 @mixin max-media($width) {
     @media only screen and (max-width: $width) {
@@ -14,15 +15,24 @@ $breakpoint-m: 700px;
 }
 
 .intro__train-sign{
-    position: absolute;
-    z-index: 3;
-    left: 20%;
-    bottom: -0.5%;
-    height: 50%;
-    width: 14vh;
+  position: absolute;
+  z-index: 3;
+  left: 15%;
+  bottom: -0.2%;
+  height: 50%;
+  width: 14vh;
 
-    @include min-media($breakpoint-m){
-        width: 18vh;
-        
-    }   
+  @include min-media($breakpoint-mplus){
+    bottom: 2.5%;
+    width: 19vh;   
+  } 
+
+  @include max-media($breakpoint-s){
+    width: 13.3vh;
+    bottom: 1%;
+  }   
+
+  @include max-media($breakpoint-xs){
+    width: 13.2vh;   
+  }   
 }

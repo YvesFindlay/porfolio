@@ -3,7 +3,7 @@ import React from 'react';
 import './Train.scss';
 
 const Train = () => (
-    <svg className="intro__train" preserveAspectRatio="none" width="766" height="39" viewBox="0 0 766 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className="intro__train" preserveAspectRatio="xMinYMid meet" width="766" height="39" viewBox="0 0 766 39" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M538.72 4.86099H386.62V22.75H538.72V4.86099Z" fill="url(#paint0_radial)"/>
         <path d="M548.341 19.11L547.087 11.8523C546.535 8.58007 544.152 5.55798 540.398 3.36923C536.645 1.18049 531.787 -0.0197264 526.762 0.000245295H400C394.976 -0.0197264 390.118 1.18049 386.364 3.36923C382.611 5.55798 380.228 8.58007 379.675 11.8523L378.388 19.11L375 38.2198H551.356L548.341 19.11ZM389.872 12.5847C390.148 10.9486 391.34 9.43754 393.216 8.34317C395.093 7.2488 397.522 6.64872 400.034 6.6587H526.898C529.41 6.64872 531.839 7.2488 533.716 8.34317C535.592 9.43754 536.784 10.9486 537.06 12.5847L538.178 19.11H388.754L389.872 12.5847Z" fill="#1F1F3D"/>
         <path d="M540.244 31.5614H386.62L388.754 19.11H538.11L540.244 31.5614Z" fill="#1F1F3D"/>

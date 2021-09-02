@@ -1,34 +1,34 @@
 $primary-nav-text: #ffffff;
-$color-primary-lightblue: #83D4ED;
+$color-primary-dark: #1F1F3D;
 
 .nav{
     position: fixed;
-    z-index: 4;
+    z-index: 5;
     top: 0;
     left: 0;
     width: 100%;
-    height: 5rem;
 
     .nav__navigation{
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 1rem;
+        padding: 1.5rem 1.5rem;  
     }
 
     .nav__logo a{
-        color: #000;
+        color: $primary-nav-text;
         list-style: none;
         text-decoration: none;
         font-size: 2.2rem;
         font-weight: 600;
-        color: $primary-nav-text;
     }
 
     .nav__spacer{
         flex: 1; // Take up all available space
     }
+
+    // Styles if I want to add move elements to nav
 
     // .nav__navigation-items ul{
     //     display: flex;
@@ -52,5 +52,18 @@ $color-primary-lightblue: #83D4ED;
     //     }
 
     // }
-        
+
+}
+
+.nav--transparent{
+    background: 0;
+}
+
+// .nav--dark-bg{
+//     background: $color-primary-dark;
+// }
+
+.hidden{
+    visibility: hidden;
+    opacity: 0;
 }

@@ -1,0 +1,34 @@
+$breakpoint-s: 700px;
+$breakpoint-splus: 701px;
+
+@mixin max-media($width) {
+    @media only screen and (max-width: $width) {
+      @content;
+    }
+}
+
+@mixin min-media($width) {
+    @media only screen and (min-width: $width) {
+      @content;
+    }
+}
+
+.intro__train-lights{
+    position: absolute;
+    z-index: 3;
+
+    @include max-media($breakpoint-s){
+        left: 78%;
+        bottom: 16%;
+        height: 13vh;
+        width: 6vh;
+    }
+
+    @include min-media($breakpoint-splus){
+        left: 80%;
+        bottom: 17%;
+        height: 16vh;
+        width: 8vh;
+    }
+    
+}

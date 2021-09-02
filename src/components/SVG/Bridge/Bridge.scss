@@ -1,23 +1,36 @@
-$breakpoint-s: 60em;
+$breakpoint-s: 600px;
+$breakpoint-m: 800px;
 
-@mixin media($width) {
+@mixin max-media($width) {
     @media only screen and (max-width: $width) {
       @content;
     }
 }
 
-.intro__bridge{
-    position: absolute;
+.intro__bridge-container{
+    position: relative;
     z-index: 5;
-    bottom: 0;
-    left: 0;
+    top: 16%;
     height: 20vh;
-    width: 100vw;
-}
 
-@include media($breakpoint-s) {
-    .intro__bridge__bottom{
-        transform: translateY(-2rem);
+    .intro__bridge{
+        position: absolute;
+        z-index: 6;
+        top: 0;
+        left: 0;
+        height: inherit;
+        width: 100%;
+    
+        @include max-media($breakpoint-s) {
+            width: 180%;
+
+            .intro__bridge__bottom{
+                transform: translateY(-2rem);
+                width: 100%;
+            }
+        }
     }
 }
+
+
 

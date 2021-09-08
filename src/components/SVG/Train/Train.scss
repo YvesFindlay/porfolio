@@ -1,28 +1,12 @@
-$breakpoint-s: 60em;
+$breakpoint-xxs: 183px;
+$breakpoint-xs: 238px;
+$breakpoint-s: 419px;
+$breakpoint-splus: 601px;
+$breakpoint-l: 800px;
 
-@mixin media($width) {
+@mixin max-media($width) {
     @media only screen and (max-width: $width) {
       @content;
-    }
-}
-
-@mixin for-size($size) {
-    @if $size == phone-only {
-        @media only screen 
-        and (min-device-width: 280px) 
-        and (max-device-width: 667px)
-        and (-webkit-min-device-pixel-ratio: 2)
-        and (orientation: portrait) 
-      { @content; }
-     }@else if $size == tablets {
-        @media only screen 
-        and (min-device-width: 768px) 
-        and (max-device-width: 1400px) 
-        and (-webkit-min-device-pixel-ratio: 2)
-        and (orientation: portrait) 
-        { @content; }
-     }@else if $size == big-desktop-up {
-      @media (min-width: 3000px) { @content; }
     }
 }
 
@@ -33,10 +17,16 @@ $breakpoint-s: 60em;
     left: -30%;
     height: 4.5vh;
     width: 100vw;
-    // border: 1px solid gold;
 
-    @include for-size(phone-only) {
-        // transform: translateY(-2rem);
-        // height: 2.5vh;
+    @include max-media($breakpoint-s) {
+        top: -17%;
+    }
+
+    @include max-media($breakpoint-xs) {
+        top: -15.5%;
+    }
+
+    @include max-media($breakpoint-xxs) {
+        top: -14%;
     }
 }

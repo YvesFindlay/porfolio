@@ -1,40 +1,44 @@
-.toggle-button{
-    height: 2.2rem;
-    width: 3.5rem;
+$width: 50%;
+
+.toggle-button {
+    height: 2.1rem;
+    width: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    background: none;
-    border: none;
-
-    &:focus{
-        outline: none;
-    }
+    background: transparent;
+    outline: none;
+    border: transparent;
+    cursor: pointer;
 
     .toggle-button__line {
+        position: absolute;
+        background: #ffffff;
+        height: 2px;
+        border-radius: 60px;
+    }
+
+    .line-1 {
+        top: 0%;
+        left: 0%;
+        transform-origin: top left;
+    }
+
+    .line-2 {
         width: 100%;
-        position: absolute;
-        background: #ffffff;
-        height: 2px;
     }
 
-    &::before, &::after {
-        position: absolute;
-        content: '';
+    .line-3 {
+        bottom: 0;
+        right: 0;
+        transform-origin: bottom right;
+    }
+
+    .line-1, .line-3 {
         width: 50%;
-        height: 2px;
-        background: #ffffff;
-    }
-
-    &::before {
-        top: 10%;
-        left: 0;
-    }
-
-    &::after {
-        bottom: 10%;
-        left: 50%;
     }
 }
+
+

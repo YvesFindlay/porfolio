@@ -30,6 +30,8 @@ const Nav = (props) => {
                     <ToggleNavButton 
                     onClick={props.onSaveDrawerState} 
                     onAnimateNav={props.onAnimateNav} 
+                    drawerState={props.drawerState}
+                    wasClicked={props.wasClicked}
                     />
                 </div>
         

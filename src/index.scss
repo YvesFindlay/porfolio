@@ -11,6 +11,8 @@
 html {
   // Global font-sizes for different screen resolutions
 
+  // scroll-behavior: smooth;
+
   @media only screen and (min-width: 901px){
     font-size: 70%;
   }
@@ -20,11 +22,7 @@ html {
   }
 
   @media only screen and (max-width: 350px){
-    font-size: 48%;
-  }
-
-  @media only screen and (max-width: 280px){
-    font-size: 43.5%;
+    font-size: 62.5%;
   }
 }
 

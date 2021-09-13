@@ -2,7 +2,7 @@ import React from 'react';
 
 import './TrainLights.scss';
 
-const TrafficLights = () => (
+const TrainLights = () => (
     <svg preserveAspectRatio="xMaxYMid meet" className="intro__train-lights" width="86" height="243" viewBox="0 0 86 243" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M33.0842 42.1572L24.7941 43.4208L24.6084 241.925L33.0842 42.1572Z" fill="#383852"/>
         <path d="M37.086 42.4042L37.4554 242.112L41.0763 42.6504L37.086 42.4042ZM33.0841 42.1572L33.2727 242.157L37.086 42.4042L33.0841 42.1572Z" fill="#1F1F3D"/>
@@ -64,5 +64,4 @@ const TrafficLights = () => (
     </svg>
 )
 
-export default TrafficLights;
-
+export default TrainLights;

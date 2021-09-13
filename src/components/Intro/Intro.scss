@@ -42,7 +42,12 @@ $top-lg-mob: 32%;
 }
 
 .intro {
-    background: radial-gradient(120% 79% at 80% 80%, $color-highlight-purple 20%, $color-secondary-purple 50.19%, $color-primary-purple 68.9%, $color-tertiary-purple 80.21%, $color-primary-dark 96%);
+    //background: radial-gradient(120% 79% at 80% 80%, $color-highlight-purple 20%, $color-secondary-purple 45.19%, $color-primary-purple 70.9%, $color-tertiary-purple 80.21%, #2d2b67 91%, $color-primary-dark 97%);
+
+    background: radial-gradient(120% 79% at 80% 80%, $color-highlight-purple 25%, $color-secondary-purple 55.19%, $color-primary-purple 70.9%, $color-tertiary-purple 80.21%, $color-primary-dark 97%);
+    
+    //background: radial-gradient(120% 79% at 80% 80%, #ff7b00 3.19%,  $color-highlight-purple 45%, $color-primary-purple 70.9%, $color-tertiary-purple 80.21%, $color-primary-dark 97%);
+
     background-size: 138%;
     position: relative;
     z-index: 2;

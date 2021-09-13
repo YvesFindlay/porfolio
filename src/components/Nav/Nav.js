@@ -27,7 +27,12 @@ const Nav = (props) => {
             <div className="nav__logo"> <a href="/">YF</a> </div>
             <div className="nav__spacer"/>
                 <div className="nav__hamburger">
-                    <ToggleNavButton onClick={props.onSaveDrawerState} />
+                    <ToggleNavButton 
+                    onClick={props.onSaveDrawerState} 
+                    onAnimateNav={props.onAnimateNav} 
+                    drawerState={props.drawerState}
+                    wasClicked={props.wasClicked}
+                    />
                 </div>
         
                 {/* <div className="nav__navigation-items">

@@ -1,25 +1,26 @@
-import React, { useState , useRef } from 'react';
+import React, { useRef } from 'react';
 
-import { gsap } from 'gsap';
+import { gsap } from 'gsap/dist/gsap';
 
 import './ToggleNavButton.scss';
-
-// issue on mobile
-// 20.875px
-// 2px
 
 const ToggleNavButton = (props) => {
     const navLine1 = useRef(null);
     const navLine2 = useRef(null);
     const navLine3 = useRef(null);
-    const [wasClicked, setWasClicked] = useState(false);
+    // const navButton = useRef(null);
+
+    const calculatePosition = (height) => {
+        // console.log(navButton.current?.style.height)
+        return height / 2 - (height / 20);
+    }
 
     const navProps = {
         width: '50%',
-        pos: 10,
-        navLine1: navLine1,
-        navLine2: navLine2,
-        navLine3: navLine3,
+        pos: calculatePosition(2),
+        navLine1,
+        navLine2,
+        navLine3
     }
    
     const navHoverAnimation = (animationType) => {
@@ -29,34 +30,31 @@ const ToggleNavButton = (props) => {
 
         animationType === 'enter' && 
         navHoverTl.to(navLine1.current, {width: '100%'})
-        .to(navLine3.current, {width: '100%'}, "<").duration(0.4);
+        .to(navLine3.current, {width: '100%'}, "<").duration(0.3);
 
-        if(wasClicked) return;
+      
         animationType === 'leave' && 
         navHoverTl.to(navLine1.current, {width: '50%'})
-        .to(navLine3.current, {width: '50%'}, "<").duration(0.4);
+        .to(navLine3.current, {width: '50%'}, "<").duration(0.3);
     }
 
     const onNavClick = () => {
-        setWasClicked(true);
         props.onClick();
-        props.onAnimateNav({...navProps}); 
+        props.onAnimateNav(navProps); 
     }
 
     const onNavEnter = () => {
-        setWasClicked(false);
-        navProps.width = '100%'
+        if(props.wasClicked) return;
         navHoverAnimation('enter');
     }
 
     const onNavLeave = () => {
-        navProps.width = '50%';
+        if(props.wasClicked) return;
         navHoverAnimation('leave');
-        wasClicked && (navProps.width = '100%');
     }
 
     return(
-        <button 
+        <button //ref={navButton}
             onClick={onNavClick} 
             onMouseEnter={onNavEnter} 
             onMouseLeave={onNavLeave} 

@@ -3,7 +3,6 @@ $breakpoint-xs: 280px;
 $breakpoint-xbetweens: 375px;
 $breakpoint-s: 419px;
 $breakpoint-splus: 420px;
-$breakpoint-l: 800px;
 
 @mixin min-media($width) {
     @media only screen and (min-width: $width) {
@@ -17,7 +16,7 @@ $breakpoint-l: 800px;
     }
 }
 
-.intro__train{
+.intro__train {
     position: absolute;
     z-index: 6;
     top: -20.8%;
@@ -28,10 +27,12 @@ $breakpoint-l: 800px;
     @include min-media($breakpoint-splus) {
         @media (orientation: landscape) {
             top: -21%;
+            left: -30%;
         }
 
         @media (orientation: portrait) {
             top: -19%;
+            left: -70%;
         }
         
     }
@@ -42,6 +43,7 @@ $breakpoint-l: 800px;
 
     @include max-media($breakpoint-xbetweens) {
         top: -16%;
+        left: -70%;
     }
 
     @include max-media($breakpoint-xs) {

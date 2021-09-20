@@ -13,22 +13,41 @@ $breakpoint-splus: 701px;
     }
 }
 
-.intro__train-lights{
+@mixin dark($col) {
+    fill: darken($color: $col, $amount: 51)
+}
+
+.intro__train-lights {
     position: absolute;
-    z-index: 3;
+    z-index: 5;
 
     @include max-media($breakpoint-s){
-        left: 78%;
-        bottom: 16%;
+        left: 76%;
+        top: -50%;
         height: 13vh;
         width: 6vh;
     }
 
     @include min-media($breakpoint-splus){
-        left: 80%;
-        bottom: 17%;
+        left: 73%;
+        top: -60%;
         height: 16vh;
         width: 8vh;
     }
+
+    .train-lights__stop {
+        fill: #FF6465;
+    }
     
+    .train-lights__go {
+        fill: #A5EB78;
+    }
+
+    .darken-stop {
+        @include dark(#FF6465);
+    }
+
+    .darken-go {
+        @include dark(#A5EB78);
+    }
 }

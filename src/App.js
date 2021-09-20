@@ -70,10 +70,10 @@ const App = () => {
   return (
     <div className="app"> 
       <Nav 
-      onSaveDrawerState={drawerClickHandler} 
-      drawerState={isDrawerOpen}
-      onAnimateNav={navClickAnimation}
-      wasClicked={wasClicked}
+       onSaveDrawerState={drawerClickHandler} 
+       drawerState={isDrawerOpen}
+       onAnimateNav={navClickAnimation}
+       wasClicked={wasClicked}
       />
       <SideDrawerNav display={isDrawerOpen} />
       {backDrop}

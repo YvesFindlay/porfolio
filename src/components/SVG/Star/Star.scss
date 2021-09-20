@@ -18,20 +18,20 @@ $breakpoint-xl: 200em;
     .intro__star{
         position: absolute;
         z-index: 2;
-        animation: twinkle 100 alternate;
-        animation-duration: var(--star-duration);
-        animation-delay:var(--star-delay);
+        // animation: twinkle 100 alternate;
+        // animation-duration: var(--star-duration);
+        // animation-delay: var(--star-delay);
 
-        @keyframes twinkle {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
+        // @keyframes twinkle {
+        //     from {
+        //         opacity: 0;
+        //         transform: scale(0.8);
+        //     }
         
-            to {
-                opacity: 1;
-                transform: scale(1.5);
-            }
-        }
+        //     to {
+        //         opacity: 1;
+        //         transform: scale(1.5);
+        //     }
+        // }
     }
 }

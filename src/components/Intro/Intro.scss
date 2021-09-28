@@ -60,7 +60,7 @@ $top-lg-mob: 32%;
     height: 100vh;
     // width: 100%;
     box-sizing: border-box;
-    overflow-x: hidden;
+    overflow: hidden;
     color: $color-primary-text;
 
     @include max-media($breakpoint-m){

@@ -1,22 +1,41 @@
-.scroll-down__container {
-    width: 90px;
-    position: relative;
-    margin-top: 18rem;
+@mixin min-media($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
 
+.scroll-down__container {
+    width: 50px;
+    position: relative;
+    // margin-top: 18rem;
+    margin: 0 auto;
+
+    @include min-media(600px){
+      position: absolute;
+      top: 5%;
+      left: -4%;
+      width: 90px;
+      margin: 10rem 0;
+    }
+    
     .scroll-down {
       display: block;
       position: relative;
-      left: -15%;
-      padding: 100px 0;
+      left: -5%;
+      // top: -300%;
+      transform: translateY(200%);
       text-align: center;
     }
+
+    // padding: 100px 0;
 
     .scroll-down::before {
       position: absolute;
       content: ' ';
       margin-left: -1px;
       width: 1px;
-      height: 90px;
+      height: 80px;
+      // height: 90px; desktop version
       top: 52%;
       left: 50%;
       background-color: #ffffff;

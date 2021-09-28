@@ -1,6 +1,7 @@
 $breakpoint-xs: 280px;
 $breakpoint-s: 400px;
 $breakpoint-splus: 401px;
+$breakpoint-m: 600px;
 $breakpoint-mplus: 600px;
 $color-primary-dark: #1F1F3D;
 $color-highlight-purple: #A259FF;
@@ -41,18 +42,35 @@ $top-lg-mob: 32%;
 }
 
 .intro {
-    background: radial-gradient(120% 79% at 80% 80%, $color-highlight-purple 20%, $color-secondary-purple 50.19%, $color-primary-purple 68.9%, $color-tertiary-purple 80.21%, $color-primary-dark 96%);
+   
+    background: radial-gradient(120% 79% at 80% 80%, 
+    $color-highlight-purple 35%, 
+    $color-secondary-purple 55.19%, 
+    $color-primary-purple 70.9%, 
+    $color-tertiary-purple 80.21%, 
+    $color-primary-dark 97%);
+    
+    //background: radial-gradient(120% 79% at 80% 80%, $color-highlight-purple 15%, $color-secondary-purple 50.19%, $color-primary-purple 70.9%, #6a3cf7 80.21%, $color-primary-dark 97%);
+
     background-size: 138%;
     position: relative;
-    z-index: 2;
-    top: 0%;
+    z-index: 3;
+    top: 0;
     left: 0;
-    // height: calc(100vh - 60px + 1%);
     height: 100vh;
-    width: 100%;
+    // width: 100%;
     box-sizing: border-box;
     overflow: hidden;
-    color: $color-primary-text;;
+    color: $color-primary-text;
+
+    @include max-media($breakpoint-m){
+        background: radial-gradient(120% 79% at 80% 80%, 
+        $color-highlight-purple 20%, 
+        $color-secondary-purple 55.19%, 
+        $color-primary-purple 65.9%, 
+        $color-tertiary-purple 80.21%, 
+        $color-primary-dark 92%);
+    }
 
     .intro__text {
         position: absolute;

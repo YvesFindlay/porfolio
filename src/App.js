@@ -80,7 +80,6 @@ const App = () => {
       <Intro />
       <AboutGrid />
     </div>
-
   );
 }
 

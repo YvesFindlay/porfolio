@@ -1,3 +1,9 @@
+@mixin max-media($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
 .intro__mountains{
   position: absolute;
   bottom: 0;
@@ -21,6 +27,12 @@
   
   .intro__mountains__mountain-4{
     transform: translateY(-14rem);
+  }
+
+  @include max-media(400px){
+    height: 90vh;
+    width: 100%;
+    
   }
 
 }

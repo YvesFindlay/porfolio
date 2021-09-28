@@ -1,8 +1,8 @@
 $breakpoint-xxs: 183px;
 $breakpoint-xs: 280px;
 $breakpoint-xbetweens: 375px;
-$breakpoint-s: 419px;
-$breakpoint-splus: 420px;
+$breakpoint-s: 600px;
+$breakpoint-splus: 601px;
 
 @mixin min-media($width) {
     @media only screen and (min-width: $width) {
@@ -18,7 +18,7 @@ $breakpoint-splus: 420px;
 
 .intro__train {
     position: absolute;
-    z-index: 6;
+    z-index: 5;
     top: -20.8%;
     left: -30%;
     height: 4.5vh;
@@ -26,7 +26,7 @@ $breakpoint-splus: 420px;
 
     @include min-media($breakpoint-splus) {
         @media (orientation: landscape) {
-            top: -21%;
+            top: -20%;
             left: -30%;
         }
 
@@ -42,15 +42,15 @@ $breakpoint-splus: 420px;
     }
 
     @include max-media($breakpoint-xbetweens) {
-        top: -16%;
+        top: -15%;
         left: -70%;
     }
 
     @include max-media($breakpoint-xs) {
-        top: -15.5%;
+        top: -14%;
     }
 
     @include max-media($breakpoint-xxs) {
-        top: -14%;
+        top: -13%;
     }
 }

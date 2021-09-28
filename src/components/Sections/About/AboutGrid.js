@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Section from '../Section';
 import ScrollDown from '../../ScrollDown/ScrollDown';
 import UseWindowSize from '../../../HelperFunctions/UseWindowSize';
-import imgScrollAnimation from '../../../HelperFunctions/ImgScrollAnimation';
+import imgScrollAnimation from '../../../HelperFunctions/imgScrollAnimation';
 
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';

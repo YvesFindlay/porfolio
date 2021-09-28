@@ -3,7 +3,7 @@ import React from 'react';
 import './Section.scss'
 
 const Section = (props) => (
-    <div className="section">{props.children}</div>
+    <section className={`${props.sectionName} card`}>{props.children}</section>
 )
 
 export default Section;

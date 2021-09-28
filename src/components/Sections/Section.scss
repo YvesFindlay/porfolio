@@ -1,6 +1,10 @@
 $color-primary-darkest: #1b1b2d;
 
-.section {
-    background:$color-primary-darkest;
-    padding: 3rem 1.5rem;
+.card {
+    background-color: $color-primary-darkest;
+    padding: 6rem 1rem;
+}
+
+.section__skills {
+    padding: 11rem 1rem;
 }

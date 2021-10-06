@@ -1,5 +1,5 @@
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
  const scrollAnimation = ({ pos, ref, ease, start, end, trigger, endTrigger, stagger, scrub, onUpdate }) => {
   

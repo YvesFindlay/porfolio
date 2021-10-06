@@ -1,0 +1,56 @@
+$breakpoint-lplus: 800px;
+$color-highlight-purple: #A259FF;
+$color-dark-bg: #1B1B2D;
+
+@mixin min-media($width) {
+    @media only screen and (min-width: $width) {
+      @content;
+    }
+}
+
+@mixin max-media($width) {
+    @media only screen and (max-width: $width) {
+      @content;
+    }
+}
+
+.contact {
+    padding: 8rem 1rem;
+    margin: 0 auto;
+    font-size: 1.6rem;
+
+    @include min-media($breakpoint-lplus){
+        width: 65%;
+        max-width: 1300px;
+    }
+
+    .contact-container {
+        padding: 5rem 0;
+        margin: 0 auto;
+    }
+
+    // .contact__content {
+    //     border: 1px solid limegreen;
+    // }
+
+    h2 {  
+        font-size: 6.5rem;
+        line-height: 1.1;
+        font-weight: 500;
+        // padding-right: 20vw;
+
+        @include max-media(600px){
+            font-size: 4rem;
+        }
+
+        &:nth-of-type(2){
+            color: $color-highlight-purple;
+        }
+    }
+
+   p {
+        margin-top: 5rem;
+        margin-left: 60%;
+        max-width: 300px;
+    }
+}

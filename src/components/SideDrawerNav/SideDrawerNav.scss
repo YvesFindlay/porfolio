@@ -1,5 +1,6 @@
 $color-primary-dark: #1F1F3D;
 $color-primary-lightblue: #83D4ED;
+$color-text-light: #dedeeb;
 
 .side-drawer{
     height: 100%;
@@ -28,7 +29,7 @@ $color-primary-lightblue: #83D4ED;
 
         a{
             text-decoration: none;
-            color: #ffffff;
+            color: $color-text-light;
             font-size: 1.6rem;
 
             &:hover, &:active{

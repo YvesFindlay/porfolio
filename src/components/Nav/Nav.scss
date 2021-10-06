@@ -1,4 +1,4 @@
-$primary-nav-text: #ffffff;
+$color-text-light: #dedeeb;
 $color-primary-dark: #1F1F3D;
 
 .nav{
@@ -15,13 +15,15 @@ $color-primary-dark: #1F1F3D;
         justify-content: space-between;
         padding: 1.5rem 1.5rem;  
     }
+ 
 
     .nav__logo a{
-        color: $primary-nav-text;
+        color: $color-text-light;
         list-style: none;
         text-decoration: none;
         font-size: 2.2rem;
         font-weight: 600;
+       
     }
 
     .nav__spacer{
@@ -41,7 +43,7 @@ $color-primary-dark: #1F1F3D;
 
     //     a{
     //         text-decoration: none;
-    //         color: $primary-nav-text;
+    //         color: $color-text-light;
     //         font-size: 1.5rem;
     //     }
 

@@ -1,14 +1,15 @@
 import { gsap } from 'gsap';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 
 
-const expandLineAnimation = ({selector, trigger, endTrigger, start, end, markers, stagger,  transformOrigin, delay }) => {
-    gsap.registerPlugin(CSSRulePlugin);
-
+const expandLineAnimation = ({selector, trigger, endTrigger, start, end, markers, stagger, transformOrigin, delay }) => {
+    
+    gsap.registerPlugin(ScrollTrigger, CSSRulePlugin);
     const rule = CSSRulePlugin.getRule(selector);
 
     const tl = gsap.timeline({
+        stagger,
         scrollTrigger: {
             trigger,
             endTrigger,

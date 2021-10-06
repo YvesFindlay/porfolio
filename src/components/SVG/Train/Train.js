@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Circ } from 'gsap';
+// import { Circ } from 'gsap';
 import scrollAnimation from '../../../HelperFunctions/scrollAnimation';
 
 import './Train.scss';
@@ -16,7 +16,7 @@ const Train = ({ trainLights }) => {
             pos: 'x',
             ref: trainRef.current,
             invalidateOnRefresh: true,
-            ease: Circ.easeOut,
+            ease: "none",
             trigger: ".intro__train-lights",
             endTrigger: ".intro__train",
             start: "10px center",

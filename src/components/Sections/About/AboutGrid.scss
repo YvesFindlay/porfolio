@@ -20,9 +20,8 @@ $color-dark-bg: #1B1B2D;
     }
 }
 
-.section__about {
-    padding: 15rem 2rem 20rem;
-    background-color: $color-dark-bg;
+.about {
+    padding: 25rem 2rem 30rem;
     margin: 0 auto;
     color: inherit;
     position: relative;
@@ -41,35 +40,23 @@ $color-dark-bg: #1B1B2D;
         }
 
         @include min-media($breakpoint-splus) {
-            grid-template-rows: repeat(4, 1fr);
+            grid-template-rows: 1fr 0.2fr 1fr;
             grid-template-columns: repeat(2, 1fr);
             place-items: center;
             margin: 0 auto;
             padding: 3rem 0.5rem;
             font-size: 1.5rem;
         }
-
-
-        // @include min-media(417px) {
-        //     grid-template-rows: 0.1fr repeat(2, 0.4fr) 1fr repeat(3, 0.6fr);
-        // }
-       
     }
 
     .about__heading {
         z-index: 2;
         font-size: 4rem;
-        font-weight: 400;
-        align-self: center;
-        justify-content: center;
-        text-align: center;
         grid-column: 1 / span 2;
-        margin: auto;
     
         @include min-media($breakpoint-splus){
             // font-size: clamp( 4.5rem, 10vw, 150px);
-            font-size: 8vw;
-            text-align: left;
+            font-size: 8.5vw;
             margin: 0;
         }
     
@@ -92,8 +79,6 @@ $color-dark-bg: #1B1B2D;
 
         &:nth-of-type(2) {  
             grid-row: 2 / span 1; 
-            color: $color-primary-lightblue;
-
             @include min-media($breakpoint-splus) {
                 grid-column: 1 / span 2; 
             }
@@ -101,27 +86,23 @@ $color-dark-bg: #1B1B2D;
 
         &:nth-of-type(3) {
             grid-row: 3 / span 1;
-            color: $color-highlight-purple;
             margin-bottom: 3rem;
+            color: $color-highlight-purple;
 
             @include min-media($breakpoint-splus) {
                 grid-row: 3 / span 1;
                 grid-column: 2 / span 1;
                 margin-bottom: 0;
-                transform: translateX(-10%);  
             }
         }
     }
 
-    p { 
+    .about__text-container { 
         position: relative;
         overflow: hidden;
         z-index: 2;
-        // right: -10.5%;
         line-height: 3rem;
         color: #dedeeb;
-        // margin-left: 10%;
-        justify-self: flex-end;
         // width: 85%;
         
 
@@ -133,18 +114,16 @@ $color-dark-bg: #1B1B2D;
             line-height: 2.6rem;
         }
 
-        @include min-media(540px) {
-            justify-self: center;
-        }
-
         
         &:nth-of-type(1) {
             grid-row: 4 / span 1; 
             grid-column: 2 / span 1;
+            margin-top: 5rem;
 
             @include min-media($breakpoint-splus) {
                 grid-row: 1 / span 1; 
-                color: $color-quaternary-purple;
+                // align-self: flex-end;
+                // justify-self: flex-start;
             }
 
             @include min-media($breakpoint-lplus) {
@@ -159,40 +138,35 @@ $color-dark-bg: #1B1B2D;
             @include min-media($breakpoint-splus) {
                 grid-column: 1 / span 1;
                 grid-row: 3 / span 1;
+                // justify-self: flex-start;
             }
 
             @include min-media($breakpoint-lplus) {
                 width: 70%;
+            }
+        };
+
+
+        &:nth-of-type(3) {
+            @include min-media($breakpoint-splus) {
+                align-self: flex-end;
             }
         }
-            
-        &:nth-of-type(3) {
-            grid-row: 6 / span 1; 
-            grid-column: 2 / span 1;
-            
 
-            @include min-media($breakpoint-splus) {
-                grid-column: 1 / span 1;
-                grid-row: 4 / span 1;
-                color: $color-primary-purple;
-                transform: translate(70%, 30%);
-                width: 70%;
-            }
 
-            @include min-media($breakpoint-lplus) {
-                width: 70%;
-            }
-
+        p {
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            color: $color-primary-purple;
         }
     }
     
     .img1 {
         position: absolute;
-        // background-color: orange;
         height: 260px;
         width: 200px;
         z-index: 1;
-        bottom: -30%;
+        bottom: -10%;
         left: 2.5rem;
 
         @include min-media($breakpoint-splus) {
@@ -212,7 +186,6 @@ $color-dark-bg: #1B1B2D;
   display: inline-block;
 }
 
-// .text-heading {
-//     height: 800px;
-//     padding: 45px 45px;
-// }
+.lines {
+    width: 50%;
+}

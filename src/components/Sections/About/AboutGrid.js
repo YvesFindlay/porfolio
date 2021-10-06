@@ -3,9 +3,7 @@ import Section from '../Section';
 import ScrollDown from '../../ScrollDown/ScrollDown';
 import UseWindowSize from '../../../HelperFunctions/UseWindowSize';
 import imgScrollAnimation from '../../../HelperFunctions/imgScrollAnimation';
-
-import gsap from 'gsap';
-import { SplitText } from 'gsap/SplitText';
+import { createSplitText,  splitText } from '../../../HelperFunctions/textRevealAnimation';
 
 import './AboutGrid.scss';
 
@@ -15,56 +13,65 @@ const AboutGrid = () => {
     // const [isMobile, setIsMobile] = useState(dimensions.isMobile);
     
     useEffect(() => {
-        gsap.registerPlugin(SplitText);
+  
 
-        const createSplitText = (el, type, linesClass) => {
-            return new SplitText(el, {
-                type,
-                linesClass,
-            });
-        }
+        // h1 split on words
 
-        const splitText = ({el, stagger, trigger, endTrigger, start, end }) => {
-            // If el is an array
-        //     let textContent = !el?.length ? el :
+        //https://greensock.com/forums/topic/27278-text-reveal-word-by-word-instead-line-by-line/
 
-        //    [...textContent].forEach((text) => {
-                // need to pass all elements to array
-                gsap.from(el, {
-                    duration: 1,
-                    yPercent: 100,
-                    ease: "power4",
-                    stagger,
-                    scrollTrigger: {
-                        start,
-                        end,
-                        trigger,
-                        endTrigger,
-                    }
-                });
-            // })
-        };
+        // const h1SplitHide = createSplitText({ 
+        //     el: ".about__heading", 
+        //     type: "words", 
+        //     wordsClass: "split-parent" 
+        // });
 
-        const h1ChildSplit = createSplitText(".about__heading", "lines", "split-child",);
-        createSplitText(".about__heading", "lines", "split-parent");
+        // const h1Split = createSplitText({ 
+        //     el: ".about__heading", 
+        //     type: "words, lines", 
+        //     wordsClass: "words",
+        //     linesClass: "lines",
+        //     position: "absolute"
+        // });
+
+        const h1Split = createSplitText({ 
+            el: ".about__heading", 
+            type: "lines", 
+            linesClass: "split-child" 
+        });
+
+        createSplitText({ 
+            el: ".about__heading", 
+            type: "lines", 
+            linesClass: "split-parent" 
+        });
 
         splitText({
-            el: h1ChildSplit.lines,
-            stagger: 0.2,
+            el: h1Split.lines,
+            // el: h1Split.words,
+            stagger: 0.4,
             trigger: ".about__heading",
             endTrigger: ".about__heading",
             start: "top center",
             end: "bottom center",
         });
 
-        const pChildSplit = createSplitText(".about__text", "lines", "split-child");
-        createSplitText(".about__text", "lines", "split-parent");
+        const pSplit = createSplitText({ 
+            el: ".about__text", 
+            type: "lines", 
+            linesClass: "split-child",
+        });
+
+        createSplitText({ 
+            el: ".about__text", 
+            type: "lines, words", 
+            linesClass: "split-parent",
+        });
 
         splitText({
-            el: pChildSplit.lines,
-            stagger: 0.3,
-            trigger: ".about__text",
-            endTrigger: ".about__text", // find way to select individual line classes
+            el: pSplit.lines,
+            stagger: 0.4,
+            trigger: ".about__text-container",
+            endTrigger: ".about__text-container", // find way to select individual line classes
             start: "top center",
             end: "bottom center",
         });
@@ -82,21 +89,23 @@ const AboutGrid = () => {
     // ANSWER - WRAP EACH TEXT IN ITS OWN WRAPPER  DIV, THEN USE DIV AS START AND END TRIGGER, OR USE numbered heading classes e.g. heading1, heading2 etc
 
     return (
-        <Section>
+        <section className="about">
             {/* <ScrollDown /> */}
-            <div className="section__about">
-                <div className="about__header">
-                    <h2 className="about__heading"> I Love to</h2>
+            <div className="about__header">
+            <h2 className="about__heading"> I love to</h2>
+              <div className="about__text-container">   
                     <p className="about__text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dicta optio commodi.</p> 
-                    <h2 className="about__heading">create effective</h2>
                     <p className="about__text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dicta optio commodi.</p> 
-                    <h2 className="about__heading">User Interfaces.</h2>
+             </div>
+                <h2 className="about__heading">create effective</h2>
+                <div className="about__text-container">   
                     <p className="about__text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dicta optio commodi.</p> 
-                    <img src="about-img2.jpg" data-img-speed="0.4" className="about__img img1" />
+                    <p className="about__text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dicta optio commodi.</p> 
                 </div>
-             
+                <h2 className="about__heading">User Interfaces.</h2>
+                <img src="about-img2.jpg" data-img-speed="0.4" className="about__img img1" />
             </div>
-        </Section>
+        </section>
     )
 }
 

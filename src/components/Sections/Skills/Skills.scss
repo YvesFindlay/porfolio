@@ -1,46 +1,55 @@
 $color-primary-purple: #6C63FF;
+$color-text-light: #dedeeb;
 
-.skills__wrapper {
-    position: relative;
-    display: grid;
-    place-items: center;
-    width: 90%;
-    height: 210px;
-    left: 50%;
-    top: 40%;
-    overflow: hidden;
+.skills {
+    padding: 5rem 0 10rem;
+    font-weight: 400;
 
-    &::before, &::after { 
-        position: absolute;
-        display: block;
-        content: "";
-        width: 80%;
-        height: 4px;
-        background-color: $color-primary-purple; 
-    }
-
-    &::before {
-        top: 0;
-    }
-
-    &::after {
-       bottom: 0;
-    }
-
-    .skills {
-        position: absolute;
+    .skills__wrapper {
+        position: relative;
         display: grid;
         place-items: center;
-        width: 180px;
-        height: 200px;
-        font-size: 6.5rem;
-        // line-height:50px;
-        text-align: center;
-    }
-
-    .skills__container {
-        place-self: flex-start;
-        position: relative;
-        left: -250px;
+        width: 90%;
+        height: 210px;
+        left: 50%;
+        top: 40%;
+        overflow: hidden;
+        // color: $color-primary-purple;
+        color: $color-text-light;
+    
+        &::before, &::after { 
+            position: absolute;
+            display: block;
+            content: "";
+            width: 80%;
+            height: 3px;
+            background-color: $color-primary-purple; 
+        }
+    
+        &::before {
+            top: 0;
+        }
+    
+        &::after {
+           bottom: 0;
+        }
+    
+        .skills__item {
+            position: absolute;
+            display: grid;
+            place-items: center;
+            width: 180px;
+            height: 200px;
+            font-size: 7rem;
+            // line-height:50px;
+            text-align: center;
+        }
+    
+        .skills__container {
+            place-self: flex-start;
+            position: relative;
+            left: -250px;
+        }
     }
 }
+

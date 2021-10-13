@@ -1,9 +1,22 @@
 $color-primary-purple: #6C63FF;
 $color-text-light: #dedeeb;
 
+@mixin min-media($width) {
+    @media only screen and (min-width: $width) {
+      @content;
+    }
+}
+
+
+@mixin max-media($width) {
+    @media only screen and (max-width: $width) {
+      @content;
+    }
+}
+
 .skills {
-    padding: 5rem 0 10rem;
-    font-weight: 400;
+    padding: 24rem 2rem 22rem;
+    font-size: 1.6rem;
 
     .skills__wrapper {
         position: relative;
@@ -14,14 +27,14 @@ $color-text-light: #dedeeb;
         left: 50%;
         top: 40%;
         overflow: hidden;
-        // color: $color-primary-purple;
-        color: $color-text-light;
+        color: $color-primary-purple;
+        font-weight: 400;
     
         &::before, &::after { 
             position: absolute;
             display: block;
             content: "";
-            width: 80%;
+            width: 90%;
             height: 3px;
             background-color: $color-primary-purple; 
         }
@@ -38,11 +51,16 @@ $color-text-light: #dedeeb;
             position: absolute;
             display: grid;
             place-items: center;
-            width: 180px;
+            margin-top: .4rem;
+            padding: 0 2rem;
             height: 200px;
             font-size: 7rem;
-            // line-height:50px;
             text-align: center;
+            opacity: 0;
+
+            @include max-media(500px){
+                font-size: 5rem;
+            }
         }
     
         .skills__container {
@@ -50,6 +68,17 @@ $color-text-light: #dedeeb;
             position: relative;
             left: -250px;
         }
+    }
+
+    p {
+        max-width: 300px;
+        padding-top: 0;
+        margin: -3rem 0 0 40%;
+
+        @include min-media(900px){
+            margin-left: 58%;
+        }
+        
     }
 }
 

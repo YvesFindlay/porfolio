@@ -40,8 +40,7 @@ const Skills = () => {
 
       return slide;
     } 
-    // look into using bind method here to preset all repeating arguments
-
+    
     expandLineAnimation({
       selector: ".skills .skills__wrapper::before",
       trigger: ".skills__wrapper",

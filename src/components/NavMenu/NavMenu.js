@@ -1,10 +1,10 @@
 import React from 'react';
 
 import {  Power1 } from 'gsap';
-import { createSplitText, splitText, splitTextTimeline } from '../../HelperFunctions/../HelperFunctions/textRevealAnimation';
-import './SideDrawerNav.scss';
+import { createSplitText, splitText, splitTextTimeline } from '../../HelperFunctions/textRevealAnimation';
+import './NavMenu.scss';
 
-const SideDrawerNav = ({display}) => {
+const NavMenu = ({display}) => {
     let drawerClasses = 'side-drawer';
 
     if(display) {
@@ -84,4 +84,4 @@ const SideDrawerNav = ({display}) => {
     )
 } 
 
-export default SideDrawerNav;
+export default NavMenu;

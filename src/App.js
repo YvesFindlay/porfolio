@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Nav from './components/Nav/Nav';
-import SideDrawerNav from './components/SideDrawerNav/SideDrawerNav';
+import SideDrawerNav from './components/NavMenu/NavMenu';
 import Backdrop from './components/Backdrop/Backdrop';
 import Intro from './components/Intro/Intro';
-// import About from './components/Sections/About/About';
-import AboutGrid from './components/Sections/About/AboutGrid';
+import About from './components/Sections/About/About';
 import Skills from './components/Sections/Skills/Skills';
 import Projects from './components/Sections/Projects/Projects';
 import Contact from './components/Sections/Contact/Contact';
 import Location from './components/Sections/Location/Location';
-
-import UseWindowSize from './HelperFunctions/UseWindowSize';
 import { gsap } from 'gsap';
 
 import './App.scss';
@@ -29,16 +26,14 @@ const App = () => {
   const navClickAnimation = ({pos, navLine1, navLine2, navLine3}) => {
     setWasClicked(true);
     
-    const navTl = gsap.timeline({
-      repeat: 0,
-    });
+    const navTl = gsap.timeline();
 
     if(!isDrawerOpen){
       navTl.fromTo(navLine1.current, {width: navLine1.current.style.width}, {width: '100%'})
       .fromTo(navLine3.current,  {width: navLine3.current.style.width}, {width: '100%'}, "<")
       .to(navLine1.current, {y: `${pos}rem`}) 
       .to(navLine3.current, {y: `${-pos}rem` }, "<")
-      .to(navLine2.current, {opacity: 0}, "-=0.8")  //-=0.58
+      .to(navLine2.current, {opacity: 0}, "-=0.8")
       .to(navLine1.current, {rotate: -43, transformOrigin: 'center'}, 0.7)
       .to(navLine3.current, {rotate: 43, transformOrigin: 'center'}, 0.7).totalDuration(1);
     }
@@ -96,8 +91,6 @@ const App = () => {
  
   // console.log(imgDisplayFlag());
 
-  let dimensions = UseWindowSize(600);
-
   return (
     <div className="app"> 
       <Nav 
@@ -109,7 +102,7 @@ const App = () => {
       <SideDrawerNav display={isDrawerOpen} />
       {backDrop}
       <Intro />
-      <AboutGrid isMobile={dimensions.isMobile} />
+      <About />
       <Skills />
       <Projects />
       <Location />

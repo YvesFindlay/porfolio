@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import { gsap } from 'gsap/dist/gsap';
+import { gsap } from 'gsap';
 
 import './ToggleNavButton.scss';
 
@@ -8,10 +8,8 @@ const ToggleNavButton = (props) => {
     const navLine1 = useRef(null);
     const navLine2 = useRef(null);
     const navLine3 = useRef(null);
-    // const navButton = useRef(null);
 
     const calculatePosition = (height) => {
-        // console.log(navButton.current?.style.height)
         return height / 2 - (height / 20);
     }
 
@@ -54,7 +52,7 @@ const ToggleNavButton = (props) => {
     }
 
     return(
-        <button //ref={navButton}
+        <button
             onClick={onNavClick} 
             onMouseEnter={onNavEnter} 
             onMouseLeave={onNavLeave} 

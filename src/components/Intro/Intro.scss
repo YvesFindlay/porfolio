@@ -16,14 +16,6 @@ $top-reg-mob: 30%;
 $left-reg-mob: 25%;
 $top-lg-mob: 32%;
 
-@mixin opacity($n) {
-    opacity: $n;
-}
-
-@mixin rotate($n) {
-    transform: rotate($n);
-}
-
 @mixin max-media($width) {
     @media only screen and (max-width: $width) {
       @content;
@@ -49,16 +41,12 @@ $top-lg-mob: 32%;
     $color-primary-purple 70.9%, 
     $color-tertiary-purple 80.21%, 
     $color-primary-dark 97%);
-    
-    //background: radial-gradient(120% 79% at 80% 80%, $color-highlight-purple 15%, $color-secondary-purple 50.19%, $color-primary-purple 70.9%, #6a3cf7 80.21%, $color-primary-dark 97%);
-
     background-size: 138%;
     position: relative;
     z-index: 3;
     top: 0;
     left: 0;
     height: 100vh;
-    // width: 100%;
     box-sizing: border-box;
     overflow: hidden;
     color: $color-primary-text;
@@ -77,6 +65,7 @@ $top-lg-mob: 32%;
         left: 30%;
         display: flex;
         flex-direction: column;
+        font-weight: 500;
 
         @include min-media($breakpoint-splus){
             @include position($top-reg-mob, $left-reg-mob);

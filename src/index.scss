@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;500&display=swap');
 
+$color-primary-purple: #6C63FF;
+
 *,
 *::after,
 *::before {
@@ -12,7 +14,7 @@ html {
   // Global font-sizes for different screen resolutions
 
   scroll-behavior: smooth;
-  //scroll-padding: 300px; // height of the fixed element
+  scroll-padding: 600px;
 
   @media only screen and (min-width: 901px){
     font-size: 70%;
@@ -29,10 +31,11 @@ html {
 
 body {
   font-family: 'Raleway', sans-serif;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
   overflow-x: hidden;
-  color: #fff;
   min-width: 280px;
+  color: $color-primary-purple;
 }

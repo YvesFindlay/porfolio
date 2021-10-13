@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-// import { Circ } from 'gsap';
+
 import scrollAnimation from '../../../HelperFunctions/scrollAnimation';
 
 import './Train.scss';
@@ -20,7 +20,7 @@ const Train = ({ trainLights }) => {
             trigger: ".intro__train-lights",
             endTrigger: ".intro__train",
             start: "10px center",
-            end: () => `${trainRef.current.style.width}`,
+            end: () => `${trainRef.current?.style.width}`,
             stagger: 0.3,
             scrub: true,
 
@@ -39,6 +39,7 @@ const Train = ({ trainLights }) => {
                 }
             }
         });
+        
     }, []);
 
     return (

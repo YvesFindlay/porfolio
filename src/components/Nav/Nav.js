@@ -14,6 +14,7 @@ const Nav = (props) => {
     const hideNav = () => navClasses += ' hidden';
 
     useEffect(() => {
+        if(props.drawerState) return;
         window.onscroll = () => {
             window.scrollY !== 0 ? setisScrollYZero(false) : setisScrollYZero(true);
         }

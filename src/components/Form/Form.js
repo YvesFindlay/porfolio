@@ -158,7 +158,6 @@ const Form = () => {
         };
       }, [emailIsValid, nameIsValid, subjectIsValid]);
 
-
     return (
         <form ref={formRef} onSubmit={submitFormHandler}>
              <p ref={errorTextRef} className="form__error-text"></p>

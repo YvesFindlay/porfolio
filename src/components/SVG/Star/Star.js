@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import scrollAnimation from '../../../HelperFunctions/scrollAnimation';
 
 import './Star.scss';
 
 const Star = () => {
   const starDOM = useRef([]);
-  const [hasResized, setHasResized] = useState(false);
+  // const [hasResized, setHasResized] = useState(false);
 
   const getStarAmount = () => {
     let amount, windowWidth = window.innerWidth;
@@ -37,7 +37,7 @@ const Star = () => {
   let starNum = getStarAmount();
 
   let stars = new Array(starNum).fill(0).map((_, ind) => (
-    <svg key={ind} data-speed={randomNum(0.01, 0.2)} ref={(element) => starDOM.current.push(element)} preserveAspectRatio="xMidYMid meet" className='intro__star' width="56" height="55" viewBox="0 0 56 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg key={ind} data-speed={randomNum(0.01, 0.4)} ref={(element) => starDOM.current.push(element)} preserveAspectRatio="xMidYMid meet" className='intro__star' width="56" height="55" viewBox="0 0 56 55" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M54.533 26.726L46.121 23.624C39.312 21.113 33.945 15.746 31.435 8.937L28.332 0.527C28.216 0.21 27.914 0 27.577 0C27.24 
           0 26.938 0.21 26.822 0.526L23.72 8.935C21.209 15.744 15.841 21.112 9.03201 23.623L0.62001 26.725C0.30401 26.841 0.0940094 
           27.143 0.0940094 27.48C0.0940094 27.817 0.30401 28.119 0.62001 28.235L9.03102 31.338C15.841 33.849 21.209 39.217 23.72 46.027L26.822 
@@ -51,7 +51,7 @@ const Star = () => {
   }
 
   const setStarSpeed = (star) => {
-    let speed = 0;
+    let speed;
     let starWidth = toDecimal(star.style.width);
     let currentSpeed = toDecimal(star.getAttribute("data-speed"));
 
@@ -70,19 +70,19 @@ const Star = () => {
     star.setAttribute("data-speed", speed);
   }
 
-  useEffect(() => {
-    const handleResize = () => {
-      setHasResized(true);
-    }
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setHasResized(true);
+  //   }
   
-    window.addEventListener('resize', handleResize);
+  //   window.addEventListener('resize', handleResize);
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      setHasResized(false);
-    }
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize);
+  //     setHasResized(false);
+  //   }
 
-  })
+  // })
 
 
   useEffect(() => {
@@ -90,10 +90,7 @@ const Star = () => {
    const {current: stars } = starDOM;
 
     stars.forEach((star) => {
-      // if(isParallaxing) return;
-
-      // if(!isParallaxing){
-      // Star coordinates
+     
       let x = randomNum(1, 100);
       let y = randomNum(1, 100);
 
@@ -106,8 +103,8 @@ const Star = () => {
         star.style.height = randomSize;
         star.style.width = randomSize;
   
-        star.style.setProperty('--star-duration', `${Math.ceil(randomNum(1, 5))}s`);
-        star.style.setProperty('--star-delay', `${Math.ceil(randomNum(1, 5))}s`);
+        // star.style.setProperty('--star-duration', `${Math.ceil(randomNum(1, 5))}s`);
+        // star.style.setProperty('--star-delay', `${Math.ceil(randomNum(1, 5))}s`);
       }
 
       setStarSpeed(star);

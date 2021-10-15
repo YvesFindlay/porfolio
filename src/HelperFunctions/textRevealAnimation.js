@@ -1,37 +1,66 @@
-import gsap from 'gsap';
-import { SplitText } from 'gsap/SplitText';
+import gsap from "gsap";
+import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(SplitText);
 
-export const createSplitText = ({ el, type, linesClass, wordsClass, position }) => {
-    return new SplitText(el, {
-        type,
-        linesClass,
-        wordsClass,
-        position
-    });
-}
-
-export const splitText = ({el, stagger, trigger, endTrigger, start, end }) => {
-    // If el is an array
-//     let textContent = !el?.length ? el :
-
-//    [...textContent].forEach((text) => {
-        // need to pass all elements to array
-
-    // gsap.utils.toArray(".line").forEach((line) => {
-        gsap.from(el, {
-            duration: 1,
-            yPercent: 100,
-            ease: "power4",
-            stagger,
-            scrollTrigger: {
-                start,
-                end,
-                trigger,
-                endTrigger,
-            }
-        });
-    // });
+export const createSplitText = ({ el, type, linesClass, wordsClass }) => {
+  return new SplitText(el, {
+    type,
+    linesClass,
+    wordsClass,
+  });
 };
 
+export const splitText = ({
+  el,
+  duration,
+  trigger,
+  endTrigger,
+  start,
+  end,
+  delay,
+  markers,
+}) => {
+  gsap.from(el, {
+    delay,
+    stagger: 0.1,
+    // duration,
+    yPercent: 100,
+    ease: "none",
+    scrollTrigger: {
+      start,
+      end,
+      trigger,
+      endTrigger,
+      // markers,
+    },
+  });
+};
+
+export const splitTextTimeline = ({
+  el,
+  stagger,
+  trigger,
+  endTrigger,
+  start,
+  end,
+  delay,
+  markers,
+}) => {
+  const textRevealTl = gsap.timeline().from(el, {
+    delay,
+    stagger,
+    // duration: 1,
+    yPercent: 100,
+    ease: "none",
+    scrollTrigger: {
+      start,
+      end,
+      trigger,
+      endTrigger,
+      markers,
+    },
+  });
+
+  return textRevealTl;
+};

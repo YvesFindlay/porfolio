@@ -2,126 +2,119 @@ $breakpoint-splus: 600px;
 $breakpoint-mplus: 650px;
 $breakpoint-lplus: 800px;
 $breakpoint-xlplus: 1000px;
-$color-highlight-purple: #A259FF;
-$color-primary-purple: #6C63FF;
+$color-highlight-purple: #a259ff;
+$color-primary-purple: #6c63ff;
 $color-quaternary-purple: #6661c1;
-$color-primary-lightblue: #83D4ED;
-$color-dark-bg: #1B1B2D;
+$color-primary-lightblue: #83d4ed;
+$color-dark-bg: #1b1b2d;
 
 @mixin min-media($width) {
-    @media only screen and (min-width: $width) {
-      @content;
-    }
+  @media only screen and (min-width: $width) {
+    @content;
+  }
 }
 
 @mixin max-media($width) {
-    @media only screen and (max-width: $width) {
-      @content;
-    }
+  @media only screen and (max-width: $width) {
+    @content;
+  }
 }
 
 .about {
-    padding: 40vh 2rem 25rem;
-    color: inherit;
+  padding: 40vh 2rem 25rem;
+  color: inherit;
+
+  @include min-media($breakpoint-lplus) {
+    padding: 24rem 2rem 2rem;
+  }
+
+  .about__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    font-size: 1.6rem;
+    // padding: 8rem 0;
 
     @include min-media($breakpoint-lplus) {
-        padding: 24rem 2rem 2rem;
+      max-width: 2000px;
     }
 
-   
-    .about__header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        position: relative;
-        z-index: 2;
-        font-size: 1.6rem;
-        // padding: 8rem 0;
+    @include min-media($breakpoint-splus) {
+      margin: 0 auto;
+    }
+  }
 
-        @include min-media($breakpoint-lplus) {
-            max-width: 2000px;
-        }
+  .about__heading {
+    font-size: clamp(4.25rem, 6vw, 7vw);
+    width: 100%;
+    text-align: center;
+    font-weight: 400;
 
-        @include min-media($breakpoint-splus) {
-            margin: 0 auto;
-        }
+    @include min-media($breakpoint-xlplus) {
+      margin: 10rem 0;
+    }
+  }
+
+  .about__text-container {
+    justify-self: flex-start;
+    display: inline-block;
+    position: relative;
+    color: $color-primary-purple;
+    font-size: 2rem;
+    margin: 2rem 0 3rem 2rem;
+    max-width: 400px;
+
+    @include min-media($breakpoint-splus) {
+      line-height: 2.6rem;
+      margin: 10vw 0 0 30vw;
+      width: 50vw;
+      max-width: none;
     }
 
-    .about__heading {
-       font-size: clamp(4.25rem, 6vw, 7vw);
-       width: 100%;
-       text-align: center;
-       font-weight: 400;
-
-        @include min-media($breakpoint-xlplus) {         
-            margin: 10rem 0;
-        }
+    @include min-media($breakpoint-xlplus) {
+      width: 32vw;
+      transform: translate(39%, -80%);
+      margin: 6rem 0 0 0;
     }
 
+    p {
+      margin-bottom: 2rem;
+    }
+  }
 
-    .about__text-container {
-        justify-self: flex-start;
-        display: inline-block;
-        position: relative; 
-        color: $color-primary-purple;
-        font-size: 2rem;
-        margin: 2rem 0 3rem 2rem;
-        max-width: 400px;
+  .about__img-container {
+    width: 100%;
+  }
 
-        @include min-media($breakpoint-splus) {
-            line-height: 2.6rem;
-            // transform: translate(35%, -80%);
-            margin: 10vw 0 0 30vw;
-            width: 50vw;
-            max-width: none;
-        }
+  .img1 {
+    display: block;
+    position: relative;
+    height: 260px;
+    width: 200px;
+    z-index: 1;
+    align-self: flex-start;
+    transform: translateY(130%);
+    left: 2rem;
+    margin: 10rem 0;
 
-        @include min-media($breakpoint-xlplus) {
-            width: 32vw;
-            transform: translate(39%, -80%);
-            margin: 6rem 0 0 0;
-        }
-
-        p {
-            margin-bottom: 2rem;
-        }
+    @include min-media($breakpoint-splus) {
+      display: inline-block;
+      transform: translateY(50%);
+      height: 320px;
+      width: 250px;
+      left: 10vw;
+      margin: 23rem 0 3rem;
+      margin-right: 45vw;
     }
 
-    .about__img-container {
-        width: 100%;
-        // border: 1px solid red;
-
+    @include min-media($breakpoint-xlplus) {
+      transform: translateY(110%);
+      left: 15vw;
     }
-    
-    .img1 {
-        display: block;
-        position: relative;
-        height: 260px;
-        width: 200px;
-        z-index: 1;
-        align-self: flex-start;
-        transform: translateY(130%);
-        left: 2rem;
-        margin: 10rem 0;
-
-        @include min-media($breakpoint-splus) {
-            display: inline-block;
-            transform: translateY(50%);
-            height: 320px;
-            width: 250px;
-            left: 10vw;
-            margin: 23rem 0 3rem;
-            margin-right: 45vw;
-        }
-
-        @include min-media($breakpoint-xlplus) {
-            // border: 1px solid green;
-            // top: 150%;
-            transform: translateY(110%);
-            left: 15vw;
-        }
-    }
+  }
 }
 
 .split-parent {

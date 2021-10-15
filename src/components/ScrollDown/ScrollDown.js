@@ -1,14 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import './ScrollDown.scss';
+import "./ScrollDown.scss";
 
-const ScrollDown = () => (
+const ScrollDown = () => {
+  return (
     <div className="scroll-down__container">
-        <div className="scroll-down">
+      <div className="scroll-down">
         <span className="scroll-down__title"> Scroll down</span>
-        </div>
+      </div>
     </div>
-)
-
+  );
+};
 
 export default ScrollDown;

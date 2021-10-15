@@ -1,4 +1,4 @@
-$color-dark-bg: #1B1B2D;
+$color-dark-bg: #16162c;
 
 .app {
   position: relative;
@@ -6,4 +6,6 @@ $color-dark-bg: #1B1B2D;
   height: 100%;
   min-width: 280px;
   background-color: $color-dark-bg;
+  font-weight: 400;
+  // color: #847dff;
 }

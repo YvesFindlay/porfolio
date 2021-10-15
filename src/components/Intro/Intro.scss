@@ -3,12 +3,12 @@ $breakpoint-s: 400px;
 $breakpoint-splus: 401px;
 $breakpoint-m: 600px;
 $breakpoint-mplus: 600px;
-$color-primary-dark: #1F1F3D;
-$color-highlight-purple: #A259FF;
-$color-primary-purple: #6C63FF;
-$color-secondary-purple: #6B6BDE;
-$color-tertiary-purple: #45419D;
-$color-primary-lightblue: #83D4ED;
+$color-primary-dark: #16162c;
+$color-highlight-purple: #a259ff;
+$color-primary-purple: #6c63ff;
+$color-secondary-purple: #6b6bde;
+$color-tertiary-purple: #45419d;
+$color-primary-lightblue: #83d4ed;
 $color-primary-text: #e5e5e5;
 $top-mob: 30%;
 $left-mob: 15%;
@@ -17,105 +17,105 @@ $left-reg-mob: 25%;
 $top-lg-mob: 32%;
 
 @mixin max-media($width) {
-    @media only screen and (max-width: $width) {
-      @content;
-    }
+  @media only screen and (max-width: $width) {
+    @content;
+  }
 }
 
 @mixin min-media($width) {
-    @media only screen and (min-width: $width) {
-      @content;
-    }
+  @media only screen and (min-width: $width) {
+    @content;
+  }
 }
 
-@mixin position($top, $left){
-    top: $top;
-    left: $left;
+@mixin position($top, $left) {
+  top: $top;
+  left: $left;
 }
 
 .intro {
-   
-    background: radial-gradient(120% 79% at 80% 80%, 
-    $color-highlight-purple 35%, 
-    $color-secondary-purple 55.19%, 
-    $color-primary-purple 70.9%, 
-    $color-tertiary-purple 80.21%, 
-    $color-primary-dark 97%);
-    background-size: 138%;
-    position: relative;
-    z-index: 3;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    box-sizing: border-box;
-    overflow: hidden;
-    color: $color-primary-text;
+  background: radial-gradient(
+    120% 79% at 80% 80%,
+    $color-highlight-purple 35%,
+    $color-secondary-purple 55.19%,
+    $color-primary-purple 70.9%,
+    $color-tertiary-purple 80.21%,
+    $color-primary-dark 97%
+  );
+  background-size: 138%;
+  position: relative;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: $color-primary-text;
 
-    @include max-media($breakpoint-m){
-        background: radial-gradient(120% 79% at 80% 80%, 
-        $color-highlight-purple 20%, 
-        $color-secondary-purple 55.19%, 
-        $color-primary-purple 65.9%, 
-        $color-tertiary-purple 80.21%, 
-        $color-primary-dark 92%);
+  @include max-media($breakpoint-m) {
+    background: radial-gradient(
+      120% 79% at 80% 80%,
+      $color-highlight-purple 20%,
+      $color-secondary-purple 55.19%,
+      $color-primary-purple 65.9%,
+      $color-tertiary-purple 80.21%,
+      $color-primary-dark 92%
+    );
+  }
+
+  .intro__text {
+    position: absolute;
+    left: 30%;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+
+    @include min-media($breakpoint-splus) {
+      @include position($top-reg-mob, $left-reg-mob);
+
+      p {
+        font-size: 4vh;
+      }
+
+      h1 {
+        font-size: 12vh;
+      }
     }
 
-    .intro__text {
-        position: absolute;
-        left: 30%;
-        display: flex;
-        flex-direction: column;
-        font-weight: 500;
+    @include min-media($breakpoint-mplus) {
+      @include position($top-lg-mob, $left-reg-mob);
 
-        @include min-media($breakpoint-splus){
-            @include position($top-reg-mob, $left-reg-mob);
+      p {
+        font-size: 4vh;
+      }
 
-            p{
-                font-size: 4vh;
-            }
-
-            h1 {
-                font-size: 12vh;  
-            }
-
-        }
-
-        @include min-media($breakpoint-mplus){
-            @include position($top-lg-mob, $left-reg-mob);
-
-            p{
-                font-size: 4vh;
-            }
-
-            h1 {
-                font-size: 12vh;  
-            }
-
-        }
-
-        @include max-media($breakpoint-s){
-            @include position($top-mob, $left-mob);
-            
-            p{
-                font-size: 3.5vh;
-            }
-
-            h1 {
-                font-size: 11vh;  
-            }
-        }
-       
-        @include max-media($breakpoint-xs){
-            @include position($top-mob, $left-mob);
-
-            p{
-                font-size: 3.5vh;
-            }
-
-            h1 {
-                font-size: 10vh;  
-            }
-        }
+      h1 {
+        font-size: 12vh;
+      }
     }
+
+    @include max-media($breakpoint-s) {
+      @include position($top-mob, $left-mob);
+
+      p {
+        font-size: 3.5vh;
+      }
+
+      h1 {
+        font-size: 11vh;
+      }
+    }
+
+    @include max-media($breakpoint-xs) {
+      @include position($top-mob, $left-mob);
+
+      p {
+        font-size: 3.5vh;
+      }
+
+      h1 {
+        font-size: 10vh;
+      }
+    }
+  }
 }
-

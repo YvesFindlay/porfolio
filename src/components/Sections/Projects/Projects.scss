@@ -1,52 +1,51 @@
-$color-highlight-purple: #A259FF;
-$color-primary-purple: #6C63FF;
+$color-highlight-purple: #a259ff;
+$color-primary-purple: #6c63ff;
 $color-quaternary-purple: #6661c1;
-$color-primary-lightblue: #83D4ED;
+$color-primary-lightblue: #83d4ed;
 $color-text-light: #dedeeb;
-$color-dark-bg: #1B1B2D;
+$color-dark-bg: #1b1b2d;
 $breakpoint-splus: 600px;
 $breakpoint-lplus: 800px;
 
 @mixin min-media($width) {
-    @media only screen and (min-width: $width) {
-      @content;
-    }
+  @media only screen and (min-width: $width) {
+    @content;
+  }
 }
 
 @mixin max-media($width) {
-    @media only screen and (max-width: $width) {
-      @content;
-    }
+  @media only screen and (max-width: $width) {
+    @content;
+  }
 }
 
 .projects {
-    padding: 10rem 1rem;
-    color: $color-text-light;
-    font-weight: 400;
-    margin: auto;
+  padding: 10rem 1rem;
+  color: $color-text-light;
+  font-weight: 400;
+  margin: auto;
 
-    @include min-media($breakpoint-lplus){
-        width: 65%;
-        max-width: 1300px;
+  @include min-media($breakpoint-lplus) {
+    width: 65%;
+    max-width: 1300px;
+  }
+
+  .projects__title-container {
+    .projects__title {
+      font-weight: 500;
+      font-size: 6.5rem;
+      line-height: 1.1;
+      color: $color-primary-purple;
+
+      @include max-media(600px) {
+        font-size: 4rem;
+      }
     }
+  }
 
-    .projects__title-container {
-        .projects__title {
-            font-weight: 500;
-            font-size: 6.5rem;
-            line-height: 1.1;
-            color: $color-primary-purple;
-
-            @include max-media(600px){
-                font-size: 4rem;
-            }
-        }
-    }
-
-    .projects__container {
-        padding: 13rem 1rem;
-        text-decoration: none;
-        list-style: none;
-    }
-
+  .projects__container {
+    padding: 13rem 1rem;
+    text-decoration: none;
+    list-style: none;
+  }
 }

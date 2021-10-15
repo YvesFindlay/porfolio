@@ -1,5 +1,5 @@
 $breakpoint-lplus: 868px;
-$color-dark-bg: #1B1B2D;
+$color-dark-bg: rgba(31, 31, 61, 0.8);
 
 @mixin min-media($width) {
     @media only screen and (min-width: $width) {
@@ -43,13 +43,16 @@ $color-dark-bg: #1B1B2D;
         }
 
         .location__text {  
+            @include  min-media(868px) {
+                text-align: center;
+            }
+
             @include min-media($breakpoint-lplus){  
                 flex-basis: 40%;
                 margin-top: 10.5rem;
                 padding: 8rem 1.5rem 10rem; 
                 height: 50%;
                 background-color: #1F1F3D;
-                text-align: center;
             }
         }
 
@@ -70,7 +73,7 @@ $color-dark-bg: #1B1B2D;
             display: block;
         }
 
-        .location__text-paragraph {       
+        .location__text-paragraph {   
             position: relative;
             margin-bottom: 1.8rem;
             display: flex; 
@@ -84,6 +87,7 @@ $color-dark-bg: #1B1B2D;
         }
 
         span {
+            display: flex;
             margin-right: 1rem;
         }
 

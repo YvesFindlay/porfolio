@@ -16,7 +16,7 @@ const Project = () => {
       tools: "HTML5, CSS3, JavaScript",
     },
     {
-      title: "Forecast",
+      title: "Forecast - Weather API App",
       tools: "HTML5, CSS3, JavaScript, React, Sass, GSAP",
     },
   ];
@@ -27,6 +27,9 @@ const Project = () => {
       <li className="project">
         <div className="project__content">
           <div className="project__title">{projects[ind].title}</div>
+          {projects[ind].title.includes("Forecast") && (
+            <div className="project__info">Coming Soon...</div>
+          )}
           <div className="project__tools">{projects[ind].tools}</div>
         </div>
       </li>

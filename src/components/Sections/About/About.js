@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 
 import ScrollDown from "../../ScrollDown/ScrollDown";
-import UseWindowSize from "../../../HelperFunctions/UseWindowSize";
 import imgScrollAnimation from "../../../HelperFunctions/imgScrollAnimation";
 import {
   createSplitText,
@@ -11,10 +10,6 @@ import {
 import "./About.scss";
 
 const About = () => {
-  let dimensions = UseWindowSize(600);
-
-  // const [isMobile, setIsMobile] = useState(dimensions.isMobile);
-
   useEffect(() => {
     const h1Split = createSplitText({
       el: ".about__heading",
@@ -30,7 +25,6 @@ const About = () => {
 
     splitText({
       el: h1Split.lines,
-      // duration: 1,
       trigger: ".about__heading",
       endTrigger: ".about__heading",
       start: "top center",

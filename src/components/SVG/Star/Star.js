@@ -86,21 +86,6 @@ const Star = () => {
   };
 
   useEffect(() => {
-    const debouncedHandleResize = debounce(function handleResize() {
-      setDimensions({
-        height: window.innerHeight,
-        width: window.innerWidth,
-      });
-    }, 100);
-
-    window.addEventListener("resize", debouncedHandleResize);
-
-    return () => {
-      window.removeEventListener("resize", debouncedHandleResize);
-    };
-  });
-
-  useEffect(() => {
     const { current: stars } = starDOM;
 
     stars.forEach((star) => {

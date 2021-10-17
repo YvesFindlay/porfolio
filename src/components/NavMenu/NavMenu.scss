@@ -65,7 +65,6 @@ $color-text-light: #dedeeb;
       margin: 1rem;
       flex: 0 0 10%;
 
-      // align text centrally on mobile
       @include min-media($breakpoint-lplus) {
         line-height: 1.4;
       }
@@ -78,8 +77,6 @@ $color-text-light: #dedeeb;
       text-decoration: none;
       color: $color-text-light;
       font-weight: 500;
-
-      position: relative;
 
       &::after {
         position: absolute;

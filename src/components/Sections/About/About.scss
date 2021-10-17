@@ -21,11 +21,11 @@ $color-dark-bg: #1b1b2d;
 }
 
 .about {
-  padding: 40vh 2rem 25rem;
+  padding: 40vh 3rem 25rem;
   color: inherit;
 
   @include min-media($breakpoint-lplus) {
-    padding: 24rem 2rem 2rem;
+    padding: 24rem 2rem 3rem;
   }
 
   .about__header {
@@ -64,14 +64,13 @@ $color-dark-bg: #1b1b2d;
     position: relative;
     color: $color-primary-purple;
     font-size: 2rem;
-    margin: 2rem 0 3rem 2rem;
+    margin: 2rem 0 3rem 0;
     max-width: 400px;
 
     @include min-media($breakpoint-splus) {
       line-height: 2.6rem;
       margin: 10vw 0 0 30vw;
-      width: 50vw;
-      max-width: none;
+      max-width: 400px;
     }
 
     @include min-media($breakpoint-xlplus) {
@@ -96,7 +95,7 @@ $color-dark-bg: #1b1b2d;
     width: 200px;
     z-index: 1;
     align-self: flex-start;
-    transform: translateY(130%);
+    transform: translateY(100%);
     left: 2rem;
     margin: 10rem 0;
 

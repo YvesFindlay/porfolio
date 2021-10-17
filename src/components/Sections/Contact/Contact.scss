@@ -15,13 +15,14 @@ $color-dark-bg: #1b1b2d;
 }
 
 .contact {
-  padding: 8rem 1rem;
+  padding: 8rem 3rem;
   margin: 0 auto;
   font-size: 1.6rem;
 
   @include min-media($breakpoint-lplus) {
-    padding: 28rem 1rem 30rem;
-    width: 65%;
+    padding-top: 28rem;
+    padding-bottom: 30rem;
+    width: 80%;
     max-width: 1300px;
   }
 
@@ -45,13 +46,17 @@ $color-dark-bg: #1b1b2d;
   }
 
   .contact__message {
-    margin-top: 5rem;
     padding: 0 1rem;
-    margin-left: 50%;
-    max-width: 300px;
+    margin: 6rem 0 0 20vw;
+    max-width: 400px;
 
-    @include min-media(1100px) {
-      margin-left: 65%;
+    @include min-media(400px) {
+      margin: 8rem 0 0 50%;
+    }
+
+    @include min-media(600px) {
+      margin: 8rem 0 0 62%;
+      max-width: 300px;
     }
   }
 }

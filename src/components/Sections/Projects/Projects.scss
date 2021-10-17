@@ -20,13 +20,13 @@ $breakpoint-lplus: 800px;
 }
 
 .projects {
-  padding: 10rem 1rem;
+  padding: 10rem 3rem;
   color: $color-text-light;
   font-weight: 400;
   margin: auto;
 
   @include min-media($breakpoint-lplus) {
-    width: 65%;
+    width: 80%;
     max-width: 1300px;
   }
 
@@ -44,7 +44,7 @@ $breakpoint-lplus: 800px;
   }
 
   .projects__container {
-    padding: 13rem 1rem;
+    padding: 13rem 0;
     text-decoration: none;
     list-style: none;
   }

@@ -52,16 +52,14 @@ $color-dark-bg: rgba(31, 31, 61, 0.8);
     }
 
     .location__text {
-      @include min-media($breakpoint-lplus) {
-        flex-basis: 45%;
-        padding: 8rem 1.5rem 10rem;
-        height: 50%;
-        text-align: center;
-        background-color: #1f1f3d;
-      }
+      display: flex;
+      flex-direction: column;
 
-      @include min-media($breakpoint-xlplus) {
-        flex-basis: 35%;
+      @include min-media($breakpoint-lplus) {
+        flex-basis: 42%;
+        padding: 8.5rem 1.5rem 8rem;
+        height: 50%;
+        background-color: #1f1f3d;
       }
     }
 
@@ -70,6 +68,11 @@ $color-dark-bg: rgba(31, 31, 61, 0.8);
       line-height: 1.1;
       font-weight: 500;
       margin-bottom: 6rem;
+      align-self: flex-start;
+
+      @include min-media($breakpoint-lplus) {
+        align-self: center;
+      }
 
       @include max-media($breakpoint-m) {
         font-size: 4rem;
@@ -116,11 +119,17 @@ $color-dark-bg: rgba(31, 31, 61, 0.8);
       overflow: hidden;
       display: block;
       border: none;
+      max-width: 600px;
+
       @include min-media($breakpoint-lplus) {
-        height: 80vh;
+        height: 70vh;
 
         padding-left: 1rem;
         max-width: none;
+      }
+
+      @include max-media($breakpoint-m) {
+        height: 60vh;
       }
     }
   }

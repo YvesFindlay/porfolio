@@ -42,6 +42,7 @@ $top-lg-mob: 32%;
     $color-tertiary-purple 80.21%,
     $color-primary-dark 97%
   );
+
   background-size: 138%;
   position: relative;
   z-index: 3;
@@ -54,8 +55,8 @@ $top-lg-mob: 32%;
 
   @include max-media($breakpoint-m) {
     background: radial-gradient(
-      120% 79% at 80% 80%,
-      $color-highlight-purple 20%,
+      160% 77% at 80% 80%,
+      $color-highlight-purple 10%,
       $color-secondary-purple 55.19%,
       $color-primary-purple 65.9%,
       $color-tertiary-purple 80.21%,
@@ -98,11 +99,11 @@ $top-lg-mob: 32%;
       @include position($top-mob, $left-mob);
 
       p {
-        font-size: 3.5vh;
+        font-size: 3.25vh;
       }
 
       h1 {
-        font-size: 11vh;
+        font-size: 10.5vh;
       }
     }
 

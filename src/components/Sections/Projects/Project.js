@@ -28,7 +28,7 @@ const Project = () => {
         <div className="project__content">
           <div className="project__title">{projects[ind].title}</div>
           {projects[ind].title.includes("Forecast") && (
-            <div className="project__info">Coming Soon...</div>
+            <div className="project__status">Coming Soon...</div>
           )}
           <div className="project__tools">{projects[ind].tools}</div>
         </div>

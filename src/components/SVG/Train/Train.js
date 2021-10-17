@@ -21,7 +21,7 @@ const Train = ({ trainLights }) => {
       endTrigger: ".intro__train",
       start: "10px center",
       end: () => `${trainRef.current?.style.width}`,
-      stagger: 0.3,
+      delay: 0.4,
       scrub: true,
 
       onUpdate: ({ progress, direction }) => {
@@ -44,7 +44,7 @@ const Train = ({ trainLights }) => {
   return (
     <svg
       ref={trainRef}
-      data-speed={0.8}
+      data-speed={0.2}
       className="intro__train"
       preserveAspectRatio="xMinYMid meet"
       width="766"

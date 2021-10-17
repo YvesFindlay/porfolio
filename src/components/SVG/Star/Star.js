@@ -3,34 +3,32 @@ import scrollAnimation from "../../../HelperFunctions/scrollAnimation";
 
 import "./Star.scss";
 
+const getStarAmount = () => {
+  let amount,
+    windowWidth = window.innerWidth;
+
+  switch (true) {
+    case windowWidth >= 0 && windowWidth <= 500:
+      amount = windowWidth / 2.8;
+      break;
+    case windowWidth > 500 && windowWidth <= 700:
+      amount = windowWidth / 5;
+      break;
+    case windowWidth > 700 && windowWidth <= 900:
+      amount = windowWidth / 5.5;
+      break;
+    case windowWidth > 900 && windowWidth <= 1200:
+      amount = windowWidth / 5.2;
+      break;
+    default:
+      amount = 280;
+  }
+
+  return Math.round(amount);
+};
+
 const Star = () => {
   const starDOM = useRef([]);
-  // const [hasResized, setHasResized] = useState(false);
-
-  const getStarAmount = () => {
-    let amount,
-      windowWidth = window.innerWidth;
-
-    switch (true) {
-      case windowWidth >= 0 && windowWidth <= 300:
-      case windowWidth > 300 && windowWidth <= 500:
-        amount = windowWidth / 2.8;
-        break;
-      case windowWidth > 500 && windowWidth <= 700:
-        amount = windowWidth / 5;
-        break;
-      case windowWidth > 700 && windowWidth <= 900:
-        amount = windowWidth / 5.5;
-        break;
-      case windowWidth > 900 && windowWidth <= 1200:
-        amount = windowWidth / 5.2;
-        break;
-      default:
-        amount = 280;
-    }
-
-    return Math.round(amount);
-  };
 
   const randomNum = (min, max) => {
     return Math.random() * max - min + min;
@@ -41,7 +39,7 @@ const Star = () => {
   let stars = new Array(starNum).fill(0).map((_, ind) => (
     <svg
       key={ind}
-      data-speed={randomNum(0.01, 0.4)}
+      data-speed={randomNum(0.01, 0.3)}
       ref={(element) => starDOM.current.push(element)}
       preserveAspectRatio="xMidYMid meet"
       className="intro__star"
@@ -72,12 +70,12 @@ const Star = () => {
     let currentSpeed = toDecimal(star.getAttribute("data-speed"));
 
     switch (true) {
-      case starWidth > 0.2 && starWidth <= 0.4:
-      case starWidth > 0.6 && starWidth <= 0.8:
+      case (starWidth > 0.2 && starWidth <= 0.4) ||
+        (starWidth > 0.6 && starWidth <= 0.8):
         speed = currentSpeed;
         break;
-      case starWidth > 0.4 && starWidth <= 0.6:
-      case starWidth > 0.8 && starWidth === 1:
+      case (starWidth > 0.4 && starWidth <= 0.6) ||
+        (starWidth > 0.8 && starWidth === 1):
         speed = -currentSpeed;
         break;
       default:
@@ -87,19 +85,20 @@ const Star = () => {
     star.setAttribute("data-speed", speed);
   };
 
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setHasResized(true);
-  //   }
+  useEffect(() => {
+    const debouncedHandleResize = debounce(function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth,
+      });
+    }, 100);
 
-  //   window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", debouncedHandleResize);
 
-  //   return () => {
-  //     window.removeEventListener('resize', handleResize);
-  //     setHasResized(false);
-  //   }
-
-  // })
+    return () => {
+      window.removeEventListener("resize", debouncedHandleResize);
+    };
+  });
 
   useEffect(() => {
     const { current: stars } = starDOM;

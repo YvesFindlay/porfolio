@@ -59,17 +59,16 @@ const Skills = () => {
       selector: ".skills .skills__wrapper::before",
       trigger: ".skills__wrapper",
       endTrigger: ".skills__wrapper",
-      start: "top center",
+      start: "top-=80px center",
       end: "bottom center",
       transformOrigin: "left",
-      // markers: true
     });
 
     expandLineAnimation({
       selector: ".skills .skills__wrapper::after",
       trigger: ".skills__wrapper",
       endTrigger: ".skills__wrapper",
-      start: "top center",
+      start: "top-=80px center",
       end: "bottom center",
       transformOrigin: "right",
       delay: 0.5,

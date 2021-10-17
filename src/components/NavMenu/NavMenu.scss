@@ -5,113 +5,126 @@ $breakpoint-m: 800px;
 $breakpoint-l: 999px;
 $breakpoint-lplus: 1000px;
 $breakpoint-mplus: 600px;
-$color-primary-dark: #1F1F3D;
-$color-secondary-dark: #1B1B2D;
-$color-highlight-purple: #A259FF;
-$color-secondary-purple: #6B6BDE;
-$color-tertiary-purple: #45419D;
-$color-primary-lightblue: #83D4ED;
+$color-primary-dark: #1f1f3d;
+$color-secondary-dark: #1b1b2d;
+$color-highlight-purple: #a259ff;
+$color-secondary-purple: #6b6bde;
+$color-tertiary-purple: #45419d;
+$color-primary-lightblue: #83d4ed;
 $color-text-light: #dedeeb;
 
 @mixin max-media($width) {
-    @media only screen and (max-width: $width) {
-      @content;
-    }
+  @media only screen and (max-width: $width) {
+    @content;
+  }
 }
 
 @mixin min-media($width) {
-    @media only screen and (min-width: $width) {
-      @content;
-    }
+  @media only screen and (min-width: $width) {
+    @content;
+  }
 }
 
 .side-drawer {
+  height: 100%;
+  background-color: $color-secondary-purple;
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-width: 280px;
+  padding: 0 5vw;
+  transform: translateY(-100%);
+  transition: transform 0.6s cubic-bezier(0.64, 0, 0.78, 0);
+  overflow: hidden;
+
+  .nav-line {
+    background-color: $color-text-light;
+    height: 3px;
+    width: 60%;
+    margin-left: auto;
+    position: relative;
+    top: 1%;
+    // margin-top: 3.5vh;
+
+    @include min-media($breakpoint-lplus) {
+      width: 50%;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  ul {
     height: 100%;
-    background-color: $color-secondary-purple;
-    position: fixed;
-    z-index: 4;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    min-width: 280px;
-    padding: 4rem 5vw;
-    transform: translateY(-100%);
-    transition: transform 0.6s cubic-bezier(0.64, 0, 0.78, 0);
-    overflow: hidden;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding-top: 8rem;
 
-    .nav-line {
-        background-color: $color-text-light;
-        height: 3px;
-        width: 60%;
-        margin-left: auto;
-        margin-top: 3.5vh;
+    li {
+      margin: 1rem;
+      flex: 0 0 10%;
 
-        @include min-media($breakpoint-lplus){
-            width: 50%;
-            margin-bottom: .5rem;
-        }
+      // align text centrally on mobile
+      @include min-media($breakpoint-lplus) {
+        line-height: 1.4;
+      }
     }
-    
-    ul {
-        height: 100%;
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        padding-top: 5rem;
 
-        li {
-            margin: 1rem;
-            flex: 0 0 10%;
-
-            // align text centrally on mobile
-
-            @include min-media($breakpoint-lplus){
-                line-height: 1.4;
-            }
-        }
-
-        .nav__element, .social__links {
-            position: relative;
-            text-decoration: none;
-            color: $color-text-light;
-            font-weight: 500;
-
-            @include max-media($breakpoint-l){
-                font-size: 7vw;
-            }
-
-            @include min-media($breakpoint-lplus){
-                font-size: 4vw;
-            }
-
-            &:hover, &:active {
-                color: $color-primary-lightblue;
-            }
-        }
+    .nav__element {
+      display: block;
     }
+
+    .nav__element,
+    .social__links {
+      position: relative;
+
+      width: 320px;
+      text-decoration: none;
+      color: $color-text-light;
+      font-weight: 500;
+
+      @include max-media($breakpoint-l) {
+        font-size: 7vw;
+      }
+
+      @include min-media($breakpoint-lplus) {
+        font-size: 4vw;
+      }
+
+      &:hover,
+      &:active {
+        color: $color-primary-lightblue;
+      }
+    }
+
+    .social__links {
+      width: 100%;
+    }
+  }
 }
 
 .socials ul {
-   display: flex;
-   flex-direction: row;
-   align-items: flex-start;
-   justify-content: flex-end;
-   width: 30%;
-   padding: 0;
-   margin: 0;
-   margin-left: auto;   
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 30%;
+  padding: 0;
+  margin: 0;
+  margin-left: auto;
 
-   .social__links {
-       font-size: 2rem;
-       margin-top: 2rem;
-       padding: 1rem 0;
-   }
+  .social__links {
+    font-size: 2rem;
+    margin-top: 2rem;
+    padding: 1rem 0;
+  }
 }
 
 .side-drawer.side-drawer--open {
-    transform: translateY(0%);
-}  
+  transform: translateY(0%);
+}
 
 .no-scroll {
-    overflow: hidden;
+  overflow: hidden;
 }

@@ -24,12 +24,10 @@ const Contact = () => {
 
     splitText({
       el: h2Split.lines,
-      // stagger: 0.2,
-      trigger: ".contact",
-      endTrigger: ".contact",
+      trigger: ".contact__content",
+      endTrigger: ".contact__content",
       start: "top center",
       end: "bottom center",
-      // markers: true
     });
   }, []);
 

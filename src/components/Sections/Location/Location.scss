@@ -1,4 +1,6 @@
+$breakpoint-m: 600px;
 $breakpoint-lplus: 868px;
+$breakpoint-xlplus: 1090px;
 $color-dark-bg: rgba(31, 31, 61, 0.8);
 
 @mixin min-media($width) {
@@ -20,11 +22,17 @@ $color-dark-bg: rgba(31, 31, 61, 0.8);
   @include min-media(800px) {
     width: 65%;
     margin: 0 auto;
-    padding-left: 3rem;
+    padding-left: 2rem;
     padding-right: 1rem;
   }
 
-  @include min-media(868px) {
+  @include min-media($breakpoint-lplus) {
+    width: 100%;
+    padding-left: 3rem;
+    padding-right: 2rem;
+  }
+
+  @include min-media($breakpoint-xlplus) {
     width: 100%;
   }
 
@@ -38,21 +46,22 @@ $color-dark-bg: rgba(31, 31, 61, 0.8);
 
     @include min-media($breakpoint-lplus) {
       flex-direction: row;
-      max-width: none;
+      align-items: center;
+      max-width: 1500px;
       font-size: 1.8rem;
     }
 
     .location__text {
-      @include min-media(868px) {
-        text-align: center;
-      }
-
       @include min-media($breakpoint-lplus) {
-        flex-basis: 40%;
-        margin-top: 10.5rem;
+        flex-basis: 45%;
         padding: 8rem 1.5rem 10rem;
         height: 50%;
+        text-align: center;
         background-color: #1f1f3d;
+      }
+
+      @include min-media($breakpoint-xlplus) {
+        flex-basis: 35%;
       }
     }
 
@@ -62,7 +71,7 @@ $color-dark-bg: rgba(31, 31, 61, 0.8);
       font-weight: 500;
       margin-bottom: 6rem;
 
-      @include max-media(600px) {
+      @include max-media($breakpoint-m) {
         font-size: 4rem;
       }
     }
@@ -93,7 +102,7 @@ $color-dark-bg: rgba(31, 31, 61, 0.8);
 
     .location__map-container {
       @include min-media($breakpoint-lplus) {
-        padding: 0 2.5rem;
+        padding: 0 1rem 0 2rem;
         flex: 1;
       }
     }
@@ -109,6 +118,8 @@ $color-dark-bg: rgba(31, 31, 61, 0.8);
       border: none;
       @include min-media($breakpoint-lplus) {
         height: 80vh;
+
+        padding-left: 1rem;
         max-width: none;
       }
     }

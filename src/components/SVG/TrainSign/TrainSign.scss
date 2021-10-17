@@ -23,16 +23,17 @@ $breakpoint-mplus: 700px;
   width: 14vh;
 
   @include min-media($breakpoint-mplus) {
-    bottom: 0.7%;
+    bottom: 0.5%;
     width: 19vh;
   }
 
   @include max-media($breakpoint-s) {
-    width: 13.3vh;
-    bottom: -1%;
+    width: 15.3vh;
+    bottom: -2%;
   }
 
   @include max-media($breakpoint-xs) {
+    bottom: -3%;
     width: 13.2vh;
   }
 }

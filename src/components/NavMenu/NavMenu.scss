@@ -71,18 +71,32 @@ $color-text-light: #dedeeb;
       }
     }
 
-    .nav__element {
-      display: block;
-    }
-
     .nav__element,
     .social__links {
+      display: inline-block;
       position: relative;
-
-      width: 320px;
       text-decoration: none;
       color: $color-text-light;
       font-weight: 500;
+
+      position: relative;
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: "";
+        bottom: 0;
+        width: 100%;
+        height: 3px;
+        transform: scaleX(1);
+        transition: transform 0.3s ease-out;
+        transform-origin: right;
+        background-color: #dedeeb;
+      }
+
+      &:hover::after {
+        transform: scaleX(0);
+      }
 
       @include max-media($breakpoint-l) {
         font-size: 7vw;
@@ -91,15 +105,16 @@ $color-text-light: #dedeeb;
       @include min-media($breakpoint-lplus) {
         font-size: 4vw;
       }
-
-      &:hover,
-      &:active {
-        color: $color-primary-lightblue;
-      }
     }
 
     .social__links {
-      width: 100%;
+      margin-top: -2rem;
+      font-size: 2rem;
+      margin-top: 0.5rem;
+
+      &::after {
+        bottom: 0;
+      }
     }
   }
 }
@@ -113,12 +128,6 @@ $color-text-light: #dedeeb;
   padding: 0;
   margin: 0;
   margin-left: auto;
-
-  .social__links {
-    font-size: 2rem;
-    margin-top: 2rem;
-    padding: 1rem 0;
-  }
 }
 
 .side-drawer.side-drawer--open {

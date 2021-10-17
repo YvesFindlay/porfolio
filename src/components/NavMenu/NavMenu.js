@@ -6,6 +6,7 @@ import {
   splitText,
   splitTextTimeline,
 } from "../../HelperFunctions/textRevealAnimation";
+
 import "./NavMenu.scss";
 
 const NavMenu = ({ display }) => {
@@ -102,17 +103,17 @@ const NavMenu = ({ display }) => {
           <ul>
             <li>
               <a className="social__links" href="/">
-                In
+                IN
               </a>
             </li>
             <li>
               <a className="social__links" href="/">
-                Gh
+                GH
               </a>
             </li>
             <li>
               <a className="social__links" href="/">
-                Tw
+                TW
               </a>
             </li>
           </ul>

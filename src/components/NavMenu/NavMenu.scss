@@ -88,14 +88,14 @@ $color-text-light: #dedeeb;
         bottom: 0;
         width: 100%;
         height: 3px;
-        transform: scaleX(1);
+        transform: scaleX(0);
         transition: transform 0.3s ease-out;
         transform-origin: right;
         background-color: #dedeeb;
       }
 
       &:hover::after {
-        transform: scaleX(0);
+        transform: scaleX(1);
       }
 
       @include max-media($breakpoint-l) {

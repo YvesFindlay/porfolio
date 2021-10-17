@@ -25,7 +25,8 @@ $color-dark-bg: #1b1b2d;
   color: inherit;
 
   @include min-media($breakpoint-lplus) {
-    padding: 24rem 2rem 3rem;
+    padding-top: 24rem;
+    padding-bottom: 3rem;
   }
 
   .about__header {
@@ -36,7 +37,6 @@ $color-dark-bg: #1b1b2d;
     position: relative;
     z-index: 2;
     font-size: 1.6rem;
-    // padding: 8rem 0;
 
     @include min-media($breakpoint-lplus) {
       max-width: 2000px;

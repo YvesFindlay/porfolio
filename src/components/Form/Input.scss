@@ -1,0 +1,74 @@
+$color-text-purple: #847dff;
+$color-text-light: #dedeeb;
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #1f1f3d inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #dedeeb !important;
+  font-size: inherit;
+}
+
+.input__wrap {
+  flex-basis: 100%;
+  position: relative;
+
+  line {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: $color-text-purple;
+    bottom: 0;
+  }
+
+  &:nth-of-type(5) {
+    margin-top: 3rem;
+  }
+}
+
+span {
+  display: block;
+  height: 100%;
+}
+
+label {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: $color-text-light;
+}
+
+input,
+textarea {
+  width: 100%;
+  display: block;
+  padding: 1.5rem 0 1rem;
+  margin-top: 3rem;
+  font-size: 1.6rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: $color-text-light;
+  font-family: inherit;
+
+  &::placeholder {
+    color: $color-text-light;
+  }
+}
+
+textarea {
+  font-family: "Raleway", sans-serif;
+  overflow-y: hidden;
+  resize: vertical;
+  height: 100px;
+  // max-height: 400px;
+}
+
+.input__message {
+  padding: 1rem 0 10rem;
+  margin-top: 2rem;
+}

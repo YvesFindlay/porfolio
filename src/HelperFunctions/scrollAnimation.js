@@ -1,8 +1,18 @@
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
- const scrollAnimation = ({ pos, ref, ease, start, end, trigger, endTrigger, stagger, scrub, onUpdate }) => {
-  
+const scrollAnimation = ({
+  pos,
+  ref,
+  ease,
+  start,
+  end,
+  trigger,
+  endTrigger,
+  stagger,
+  scrub,
+  onUpdate,
+}) => {
   gsap.registerPlugin(ScrollTrigger);
 
   gsap.config({
@@ -10,7 +20,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
   });
 
   gsap.to(ref, {
-    [pos]: (_, el) => (parseFloat(el.getAttribute("data-speed"))) * ScrollTrigger.maxScroll(window),
+    [pos]: (_, el) =>
+      parseFloat(el.getAttribute("data-speed")) *
+      ScrollTrigger.maxScroll(window),
     ease,
     stagger,
     scrollTrigger: {
@@ -20,8 +32,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
       end,
       scrub,
       onUpdate,
-    }
+    },
   });
-}
+};
 
 export default scrollAnimation;

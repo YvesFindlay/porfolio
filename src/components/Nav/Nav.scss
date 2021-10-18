@@ -1,69 +1,67 @@
-$primary-nav-text: #ffffff;
-$color-primary-dark: #1F1F3D;
+$color-text-light: #dedeeb;
+$color-primary-dark: #16162c;
 
-.nav{
-    position: fixed;
-    z-index: 5;
-    top: 0;
-    left: 0;
-    width: 100%;
+.nav {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
 
-    .nav__navigation{
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1.5rem 1.5rem;  
-    }
+  .nav__navigation {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1.5rem;
+  }
 
-    .nav__logo a{
-        color: $primary-nav-text;
-        list-style: none;
-        text-decoration: none;
-        font-size: 2.2rem;
-        font-weight: 600;
-    }
+  .nav__logo a {
+    color: $color-text-light;
+    list-style: none;
+    text-decoration: none;
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
 
-    .nav__spacer{
-        flex: 1; // Take up all available space
-    }
+  .nav__spacer {
+    flex: 1; // Take up all available space
+  }
 
-    // Styles if I want to add move elements to nav
+  // Styles if I want to add move elements to nav
 
-    // .nav__navigation-items ul{
-    //     display: flex;
-    //     list-style: none;
+  // .nav__navigation-items ul{
+  //     display: flex;
+  //     list-style: none;
 
-    //     li{
-    //         padding: 0 1rem;
-    //     }
-       
+  //     li{
+  //         padding: 0 1rem;
+  //     }
 
-    //     a{
-    //         text-decoration: none;
-    //         color: $primary-nav-text;
-    //         font-size: 1.5rem;
-    //     }
+  //     a{
+  //         text-decoration: none;
+  //         color: $color-text-light;
+  //         font-size: 1.5rem;
+  //     }
 
-    //     a:hover{
-    //     }
+  //     a:hover{
+  //     }
 
-    //     a:active{
-    //     }
+  //     a:active{
+  //     }
 
-    // }
-
+  // }
 }
 
-.nav--transparent{
-    background: 0;
+.nav--transparent {
+  background: 0;
 }
 
 // .nav--dark-bg{
 //     background: $color-primary-dark;
 // }
 
-.hidden{
-    visibility: hidden;
-    opacity: 0;
+.hidden {
+  visibility: hidden;
+  opacity: 0;
 }

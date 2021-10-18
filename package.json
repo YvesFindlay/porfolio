@@ -6,10 +6,13 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "emailjs-com": "^3.2.0",
     "gsap": "npm:@gsap/shockingly@^3.7.1",
+    "leaflet": "^1.7.1",
     "locomotive-scroll": "^4.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-leaflet": "^3.2.1",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
@@ -25,18 +28,12 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
+  "browserslist": 
+    [
       ">0.2%",
       "not dead",
       "not op_mini all"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
     "node-sass": "^6.0.1"
   }

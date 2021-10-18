@@ -1,175 +1,153 @@
 $breakpoint-xs: 280px;
-$breakpoint-s: 600px;
-$breakpoint-splus: 601px;
-$breakpoint-l: 800px;
-
-@mixin opacity($n) {
-    opacity: $n;
-}
-
-@mixin rotate($n) {
-    transform: rotate($n);
-}
+$breakpoint-s: 599px;
+$breakpoint-splus: 600px;
+$breakpoint-lplus: 800px;
 
 @mixin max-media($width) {
-    @media only screen and (max-width: $width) {
-      @content;
-    }
+  @media only screen and (max-width: $width) {
+    @content;
+  }
 }
 
 @mixin min-media($width) {
-    @media only screen and (min-width: $width) {
-      @content;
-    }
+  @media only screen and (min-width: $width) {
+    @content;
+  }
 }
 
 .intro__cloud {
-    position: absolute;
-    z-index: 3;
-}
-
-.intro__cloud--m {
-    height: 10%;
-    width: 10%;
-}
-
-.intro__cloud--s {
-    height: 6%;
-    width: 6%;
+  position: absolute;
+  z-index: 3;
 }
 
 @include max-media($breakpoint-s) {
-     .intro__cloud--s {
-        height: 5%;
-        width: 5%;
-        @include opacity(0.9);
-    }
+  .intro__cloud--m {
+    height: 6%;
+    width: 6%;
+    min-width: 23px;
+    min-height: 23px;
+  }
 
-    .intro__cloud--m {
-        height: 9%;
-        width: 9%;
-    }
-    .intro__cloud--xs {
-        height: 5.5%;
-        width: 5.5%;
-    }
+  .intro__cloud--s {
+    height: 5%;
+    width: 5%;
+    min-width: 20px;
+    min-height: 20px;
+  }
 
-    .cloud1 {
-        top: 44%;
-        left: 3%;
-    }
-    
-    .cloud2 {
-        top: 46%;
-        left: 50%;
-    }
+  .intro__cloud--xs {
+    height: 4%;
+    width: 4%;
+    min-width: 18px;
+    min-height: 18px;
+  }
 
-    .cloud3 {
-        top: 40%;
-        left: 20%;
-    }
+  .cloud1 {
+    top: 45%;
+    left: 5%;
+  }
 
-    .cloud4 {
-        top: 40%;
-        left: 40%;
-    }
+  .cloud2,
+  .cloud3 {
+    display: none;
+  }
 
-    .cloud5 {
-        top: 34%;
-        right: 30%;
-    }
-    
-    .cloud6 {
-        top: 40%;
-        right: 2%;
-    }
+  .cloud4 {
+    top: 55%;
+    right: 45%;
+  }
 
-    .cloud9 {
-        top: 28%;
-        right: 20%;
-    }
-    
-    .cloud10 {
-        top: 45%;
-        right: 20%;
-    }
+  .cloud5 {
+    top: 51%;
+    right: 15%;
+  }
+
+  .cloud9 {
+    top: 30%;
+    right: 18%;
+  }
+
+  .cloud10 {
+    top: 50%;
+    left: 26%;
+  }
+
+  .cloud6 {
+    top: 40%;
+    right: 2%;
+    display: none;
+  }
 }
 
 @include min-media($breakpoint-splus) {
-    .intro__triple-cloud--m { 
-        height: 7%;
-        width: 7%;
-    }
+  .intro__cloud--m {
+    height: 5vw;
+    width: 5vw;
+  }
+  .intro__cloud--s {
+    height: 4%;
+    width: 4%;
+  }
 
-    .intro__cloud--m {
-        height: 6%;
-        width: 6%;
-    }
+  .intro__cloud--xs {
+    height: 3%;
+    width: 3%;
+  }
 
-    .intro__cloud--xs {
-        height: 3.5%;
-        width: 3.5%;
-    }
+  .cloud1 {
+    top: 40%;
+    left: 5%;
+  }
 
-    .cloud1 {
-        top: 40%;
-        left: 3%;
-    }
-    
-    .cloud2 {
-        top: 20%;
-        left: 60%;
-    }
+  .cloud2 {
+    top: 30%;
+    left: 70%;
+  }
 
-    .cloud3 {
-        top: 28%;
-        left: 18%;
-    }
+  .cloud3 {
+    top: 23%;
+    left: 22%;
+  }
 
-    .cloud4 {
-        top: 40%;
-        right: 35%;
-    }
+  .cloud4 {
+    top: 55%;
+    right: 45%;
+  }
 
-    .cloud5 {
-        top: 51%;
-        right: 22%;
-    }
+  .cloud5 {
+    top: 51%;
+    right: 22%;
+  }
 
-    .cloud9 {
-        top: 30%;
-        right: 18%;
-    }
+  .cloud10 {
+    display: none;
+  }
 
-    .cloud10 {
-        top: 25%;
-        left: 40%;
-    }
-    
-    .cloud6 {
-        top: 40%;
-        right: 2%;
-    }
+  .cloud6 {
+    top: 40%;
+    right: 2%;
+  }
 }
 
-@include min-media($breakpoint-l) {
-    .intro__triple-cloud--m {
-        height: 7,5%;
-        width: 7.5%;
-    }
+@include min-media($breakpoint-lplus) {
+  .intro__cloud--m {
+    height: 3%;
+    width: 3%;
+  }
 
-    .intro__cloud--m { 
-        height: 4.75%;
-        width: 4.75%;
-    }
+  .intro__cloud--s {
+    height: 3%;
+    width: 3%;
+  }
 
-    .intro__cloud--s {
-        height: 4%;
-        width: 4%;
-    }
-    
-    .intro__cloud--xs {
-        height: 2%;
-        width: 2%;
-    }
+  .intro__cloud--xs {
+    height: 2%;
+    width: 2%;
+  }
+
+  .cloud10 {
+    top: 26%;
+    left: 48%;
+    display: block;
+  }
 }

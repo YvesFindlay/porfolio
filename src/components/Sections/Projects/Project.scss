@@ -1,0 +1,43 @@
+$color-primary-purple: #6c63ff;
+$color-text-light: #dedeeb;
+
+$breakpoint-lplus: 800px;
+
+@mixin max-media($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+.line {
+  display: block;
+  background-color: $color-primary-purple;
+  width: 100%;
+  height: 2px;
+}
+
+.project {
+  padding: 2rem 0;
+  font-size: 1.4rem;
+
+  .project__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $color-text-light;
+
+    .project__title {
+      font-size: 2rem;
+    }
+
+    .project__status {
+      font-size: 1.6rem;
+      margin-top: 1rem;
+    }
+
+    .project__tools {
+      margin-top: 2rem;
+      align-self: flex-end;
+    }
+  }
+}

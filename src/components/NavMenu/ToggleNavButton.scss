@@ -1,4 +1,5 @@
 $width: 50%;
+$color-text-light: #fff;
 
 .toggle-button {
     height: 2rem;
@@ -15,7 +16,7 @@ $width: 50%;
 
     .toggle-button__line {
         position: absolute;
-        background: #ffffff;
+        background: $color-text-light;
         height: 2px;
         border-radius: 60px;
     }

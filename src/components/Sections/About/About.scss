@@ -1,6 +1,125 @@
-.section__about {
-    font-size: 5rem;
-    color: inherit;
-    height: 100vh;
-    padding: 10vh 0; 
+$breakpoint-splus: 600px;
+$breakpoint-mplus: 650px;
+$breakpoint-lplus: 800px;
+$breakpoint-xlplus: 1000px;
+$color-highlight-purple: #a259ff;
+$color-primary-purple: #6c63ff;
+$color-quaternary-purple: #6661c1;
+$color-primary-lightblue: #83d4ed;
+$color-dark-bg: #1b1b2d;
+
+@mixin min-media($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin max-media($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+.about {
+  padding: 40vh 3rem 25rem;
+  color: inherit;
+
+  @include min-media($breakpoint-lplus) {
+    padding-top: 24rem;
+    padding-bottom: 3rem;
+  }
+
+  .about__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    font-size: 1.6rem;
+
+    @include min-media($breakpoint-lplus) {
+      max-width: 2000px;
+    }
+
+    @include min-media($breakpoint-splus) {
+      margin: 0 auto;
+    }
+  }
+
+  .about__heading {
+    font-size: clamp(4.25rem, 6vw, 7vw);
+    width: 100%;
+    text-align: center;
+    font-weight: 400;
+
+    @include min-media($breakpoint-xlplus) {
+      margin: 10rem 0;
+    }
+  }
+
+  .about__text-container {
+    justify-self: flex-start;
+    display: inline-block;
+    position: relative;
+    color: $color-primary-purple;
+    font-size: 2rem;
+    margin: 2rem 0 3rem 0;
+    max-width: 400px;
+
+    @include min-media($breakpoint-splus) {
+      line-height: 2.6rem;
+      margin: 10vw 0 0 30vw;
+      max-width: 400px;
+    }
+
+    @include min-media($breakpoint-xlplus) {
+      width: 32vw;
+      transform: translate(39%, -80%);
+      margin: 6rem 0 0 0;
+    }
+
+    p {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .about__img-container {
+    width: 100%;
+  }
+
+  .img1 {
+    display: block;
+    position: relative;
+    height: 260px;
+    width: 200px;
+    z-index: 1;
+    align-self: flex-start;
+    transform: translateY(100%);
+    left: 2rem;
+    margin: 10rem 0;
+
+    @include min-media($breakpoint-splus) {
+      display: inline-block;
+      transform: translateY(50%);
+      height: 320px;
+      width: 250px;
+      left: 10vw;
+      margin: 23rem 0 3rem;
+      margin-right: 45vw;
+    }
+
+    @include min-media($breakpoint-xlplus) {
+      transform: translateY(110%);
+      left: 15vw;
+    }
+  }
+}
+
+.split-parent {
+  overflow: hidden;
+}
+
+.split-child {
+  display: inline-block;
 }

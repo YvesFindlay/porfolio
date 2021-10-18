@@ -1,90 +1,92 @@
-import React, { useEffect } from 'react';
-import Section from '../Section';
-import expandLineAnimation from '../../../HelperFunctions/expandLineAnimation';
-import { gsap, Power1 } from 'gsap';
+import React, { useEffect } from "react";
+import expandLineAnimation from "../../../HelperFunctions/expandLineAnimation";
+import { gsap, Power1 } from "gsap";
 
-import './Skills.scss'
+import "./Skills.scss";
 
 const Skills = () => {
-    // const skillsDOM = useRef([]);
-    // https://greensock.com/forums/topic/16036-animate-after/
+  const skills = [
+    "JavaScript",
+    "React",
+    "HTML5",
+    "Sass",
+    "CSS3",
+    "Bootstrap",
+    "Figma",
+    "GSAP3",
+    "npm",
+  ];
+  const skillElems = skills.map((skill, ind) => {
+    return (
+      <div key={ind} className="skills__item">
+        {skill}
+      </div>
+    );
+  });
 
-    useEffect(() => {
-      gsap.set('.skills__wrapper',{xPercent:-50,yPercent:-50})
+  useEffect(() => {
+    gsap.set(".skills__wrapper", { xPercent: -50, yPercent: -50 });
+    // on mobile change boxWidth based on viewport height
+    const boxWidth = 700;
+    const totalWidth = boxWidth * 9; //  * n of boxes
+    const no01 = document.querySelectorAll("#no01 .skills__item");
+    const fromLeft = "-=" + totalWidth;
 
-      const boxWidth = 180;
-      const totalWidth = boxWidth * 10;  //  * n of boxes
-      const no01 = document.querySelectorAll("#no01 .skills")
-      const fromLeft = "-=" + totalWidth;
-          
-      const mod = gsap.utils.wrap(0, totalWidth);
-        
-      const marquee = (which, time, direction) => {
-        gsap.set(which, {
-          x:(i) => {
-            return i * boxWidth;
-          }
-        });
+    const mod = gsap.utils.wrap(0, totalWidth);
 
-        const slide = gsap.timeline().to(which,  {
-          x: direction,
-          modifiers: {
-            x: x => mod(Number.parseFloat(x)) + "px"
-          },
-        
-          duration:time, ease:'none',
-            repeat:-1,
-        });
+    const marquee = (which, time, direction) => {
+      gsap.set(which, {
+        x: (i) => {
+          return i * boxWidth;
+        },
+      });
 
-        return slide;
-      } 
+      const slide = gsap.timeline().to(which, {
+        x: direction,
+        modifiers: {
+          x: (x) => mod(Number.parseFloat(x)) + "px",
+        },
 
+        duration: time,
+        ease: "none",
+        repeat: -1,
+      });
 
-    // gsap.registerPlugin(CSSRulePlugin);
-
-    // const rule = CSSRulePlugin.getRule(".skills__wrapper::before");
-
-
-    // look into using bind method here to preset all repeating arguments
-
-     expandLineAnimation({
-      selector: ".skills__wrapper::before",
-      trigger: ".skills__wrapper",
-      endTrigger: ".skills__wrapper",
-      start: "-=100px center",
-      end: "bottom center",
-      transformOrigin: "left",
-    })
+      return slide;
+    };
 
     expandLineAnimation({
-      selector: ".skills__wrapper::after",
+      selector: ".skills .skills__wrapper::before",
       trigger: ".skills__wrapper",
       endTrigger: ".skills__wrapper",
-      start: "-=100px center",
+      start: "top-=80px center",
+      end: "bottom center",
+      transformOrigin: "left",
+    });
+
+    expandLineAnimation({
+      selector: ".skills .skills__wrapper::after",
+      trigger: ".skills__wrapper",
+      endTrigger: ".skills__wrapper",
+      start: "top-=80px center",
       end: "bottom center",
       transformOrigin: "right",
       delay: 0.5,
-    }).from('.skills', {y:"+=100%", duration: 1, stagger: 0.1, ease: Power1.easeInOut}).add(marquee(no01, 10, fromLeft), ">");
-    }, []);
+    })
+      .to(".skills__item", { opacity: 1, ease: Power1.easeInOut }, ">")
+      .add(marquee(no01, 20, fromLeft));
+  }, []);
 
-    return (
-      <Section sectionName="section__skills">
-        <div className="skills__wrapper">
-          <div id="no01" className="skills__container">
-            <div className="skills">A</div>
-            <div className="skills">B</div>
-            <div className="skills">C</div>
-            <div className="skills">D</div>
-            <div className="skills">E</div>
-            <div className="skills">F</div>
-            <div className="skills">G</div>
-            <div className="skills">H</div>
-            <div className="skills">I</div>
-            <div className="skills">J</div>
-          </div>
+  return (
+    <section className="skills">
+      <div className="skills__wrapper">
+        <div id="no01" className="skills__container">
+          {skillElems}
         </div>
-      </Section>
-    )
-}
+      </div>
+      <p>A list of skills I've acquired over the years</p>
+    </section>
+  );
+};
 
 export default Skills;

@@ -1,0 +1,136 @@
+$breakpoint-m: 600px;
+$breakpoint-lplus: 868px;
+$breakpoint-xlplus: 1090px;
+$color-dark-bg: rgba(31, 31, 61, 0.8);
+
+@mixin min-media($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin max-media($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+.location {
+  overflow: hidden;
+  padding: 22rem 3rem;
+
+  @include min-media(800px) {
+    width: 65%;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 1rem;
+  }
+
+  @include min-media($breakpoint-lplus) {
+    width: 100%;
+    padding-left: 3rem;
+    padding-right: 2rem;
+  }
+
+  @include min-media($breakpoint-xlplus) {
+    width: 100%;
+  }
+
+  .location__content {
+    margin: 0 auto;
+    height: 100%;
+    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+
+    @include min-media($breakpoint-lplus) {
+      flex-direction: row;
+      align-items: center;
+      max-width: 1500px;
+      font-size: 1.8rem;
+    }
+
+    .location__text {
+      display: flex;
+      flex-direction: column;
+
+      @include min-media($breakpoint-lplus) {
+        flex-basis: 42%;
+        padding: 8.5rem 1.5rem 8rem;
+        height: 50%;
+        background-color: #1f1f3d;
+      }
+    }
+
+    .location__text-title {
+      font-size: 6.5rem;
+      line-height: 1.1;
+      font-weight: 500;
+      margin-bottom: 6rem;
+      align-self: flex-start;
+
+      @include min-media($breakpoint-lplus) {
+        align-self: center;
+      }
+
+      @include max-media($breakpoint-m) {
+        font-size: 4rem;
+      }
+    }
+
+    .email-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .location__text-paragraph {
+      position: relative;
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+
+      @include min-media($breakpoint-lplus) {
+        justify-content: center;
+        flex-direction: row;
+        max-width: none;
+      }
+    }
+
+    span {
+      display: flex;
+      margin-right: 1rem;
+    }
+
+    .location__map-container {
+      @include min-media($breakpoint-lplus) {
+        padding: 0 1rem 0 2rem;
+        flex: 1;
+      }
+    }
+
+    .location__map {
+      position: relative;
+      z-index: 3;
+      height: 70vh;
+      width: 100%;
+      margin: 4.5vh auto;
+      overflow: hidden;
+      display: block;
+      border: none;
+      max-width: 600px;
+
+      @include min-media($breakpoint-lplus) {
+        height: 70vh;
+
+        padding-left: 1rem;
+        max-width: none;
+      }
+
+      @include max-media($breakpoint-m) {
+        height: 60vh;
+      }
+    }
+  }
+}

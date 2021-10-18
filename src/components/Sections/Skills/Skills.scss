@@ -1,6 +1,23 @@
-$color-primary-purple: #6C63FF;
+$color-primary-purple: #6c63ff;
+$color-text-light: #dedeeb;
 
-.skills__wrapper {
+@mixin min-media($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin max-media($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+.skills {
+  padding: 24rem 3rem 22rem;
+  font-size: 1.6rem;
+
+  .skills__wrapper {
     position: relative;
     display: grid;
     place-items: center;
@@ -9,38 +26,61 @@ $color-primary-purple: #6C63FF;
     left: 50%;
     top: 40%;
     overflow: hidden;
+    color: $color-primary-purple;
+    font-weight: 400;
 
-    &::before, &::after { 
-        position: absolute;
-        display: block;
-        content: "";
-        width: 80%;
-        height: 4px;
-        background-color: $color-primary-purple; 
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 100%;
+      height: 3px;
+      background-color: $color-primary-purple;
+
+      @include min-media(500px) {
+        width: 90%;
+      }
     }
 
     &::before {
-        top: 0;
+      top: 0;
     }
 
     &::after {
-       bottom: 0;
+      bottom: 0;
     }
 
-    .skills {
-        position: absolute;
-        display: grid;
-        place-items: center;
-        width: 180px;
-        height: 200px;
-        font-size: 6.5rem;
-        // line-height:50px;
-        text-align: center;
+    .skills__item {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      margin-top: 0.4rem;
+      padding: 0 2rem;
+      height: 200px;
+      font-size: 7rem;
+      text-align: center;
+      opacity: 0;
+
+      @include max-media(500px) {
+        font-size: 5rem;
+      }
     }
 
     .skills__container {
-        place-self: flex-start;
-        position: relative;
-        left: -250px;
+      place-self: flex-start;
+      position: relative;
+      left: -250px;
     }
+  }
+
+  p {
+    max-width: 300px;
+    padding-top: 0;
+    margin: -3rem 0 0 40%;
+
+    @include min-media(900px) {
+      margin-left: 58%;
+    }
+  }
 }

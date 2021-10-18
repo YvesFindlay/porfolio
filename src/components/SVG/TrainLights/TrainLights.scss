@@ -2,52 +2,52 @@ $breakpoint-s: 700px;
 $breakpoint-splus: 701px;
 
 @mixin max-media($width) {
-    @media only screen and (max-width: $width) {
-      @content;
-    }
+  @media only screen and (max-width: $width) {
+    @content;
+  }
 }
 
 @mixin min-media($width) {
-    @media only screen and (min-width: $width) {
-      @content;
-    }
+  @media only screen and (min-width: $width) {
+    @content;
+  }
 }
 
 @mixin dark($col) {
-    fill: darken($color: $col, $amount: 51)
+  fill: darken($color: $col, $amount: 51);
 }
 
 .intro__train-lights {
-    position: absolute;
-    z-index: 5;
+  position: absolute;
+  z-index: 5;
 
-    @include max-media($breakpoint-s){
-        left: 76%;
-        top: -50%;
-        height: 13vh;
-        width: 6vh;
-    }
+  @include max-media($breakpoint-s) {
+    left: 76%;
+    top: -50%;
+    height: 13vh;
+    width: 6vh;
+  }
 
-    @include min-media($breakpoint-splus){
-        left: 73%;
-        top: -60%;
-        height: 16vh;
-        width: 8vh;
-    }
+  @include min-media($breakpoint-splus) {
+    left: 73%;
+    top: -60%;
+    height: 16vh;
+    width: 8vh;
+  }
 
-    .train-lights__stop {
-        fill: #FF6465;
-    }
-    
-    .train-lights__go {
-        fill: #A5EB78;
-    }
+  .train-lights__stop {
+    fill: #ff6465;
+  }
 
-    .darken-stop {
-        @include dark(#FF6465);
-    }
+  .train-lights__go {
+    fill: #a5eb78;
+  }
 
-    .darken-go {
-        @include dark(#A5EB78);
-    }
+  .darken-stop {
+    @include dark(#ff6465);
+  }
+
+  .darken-go {
+    @include dark(#a5eb78);
+  }
 }

@@ -4,35 +4,27 @@
   }
 }
 
-.intro__mountains{
+.intro__mountains {
   position: absolute;
   bottom: 0;
   left: 0;
   z-index: 3;
-
   height: 100vh;
   width: 100%;
 
-  .intro__mountains__mountain-1{
+  .intro__mountains__mountain-1 {
     transform: translateY(-2rem);
   }
-  
-  .intro__mountains__mountain-2{
+
+  .intro__mountains__mountain-2 {
     transform: translateY(-3.5rem);
   }
 
-  .intro__mountains__mountain-3{
+  .intro__mountains__mountain-3 {
     transform: translateY(-8.9rem);
   }
-  
-  .intro__mountains__mountain-4{
+
+  .intro__mountains__mountain-4 {
     transform: translateY(-14rem);
   }
-
-  @include max-media(400px){
-    height: 90vh;
-    width: 100%;
-    
-  }
-
 }

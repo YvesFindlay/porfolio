@@ -21,7 +21,7 @@ const Train = ({ trainLights }) => {
       endTrigger: ".intro__train",
       start: "10px center",
       end: () => `${trainRef.current?.style.width}`,
-      delay: 0.4,
+      delay: 2,
       scrub: true,
 
       onUpdate: ({ progress, direction }) => {

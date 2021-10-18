@@ -101,9 +101,17 @@ const Footer = () => {
           </ul>
         </div>
         <ul className="footer__socials">
-          <li className="footer__animate-item">TW</li>
-          <li className="footer__animate-item">GH</li>
-          <li className="footer__animate-item">LN</li>
+          <li className="footer__animate-item">
+            {" "}
+            <a href="https://www.linkedin.com/in/yves-findlay">LN</a>
+          </li>
+          <li className="footer__animate-item">
+            <a href="https://github.com/YvesFindlay/portfolio.git">GH </a>
+          </li>
+          <li className="footer__animate-item">
+            {" "}
+            <a href="https://twitter.com/FindlayYves">TW</a>
+          </li>
         </ul>
         <div className="footer__bottom">
           <div className="footer-line" />

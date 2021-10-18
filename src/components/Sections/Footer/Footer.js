@@ -86,7 +86,11 @@ const Footer = () => {
           <div className="footer__contact">
             <span className="footer__animate-item">Say hey!</span>
             <ul className="footer__contact-list">
-              <li className="footer__animate-item">yves.findlay@gmail.com</li>
+              <li className="footer__animate-item">
+                <a href="mailto:yves.findlay@gmail.com">
+                  yves.findlay@gmail.com
+                </a>
+              </li>
               <li className="footer__animate-item">telegram link</li>
               <li className="footer__animate-item">Signal link</li>
             </ul>

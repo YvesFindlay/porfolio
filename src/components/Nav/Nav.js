@@ -35,6 +35,7 @@ const Nav = (props) => {
             onAnimateNav={props.onAnimateNav}
             drawerState={props.drawerState}
             wasClicked={props.wasClicked}
+            hasNavigated={props.hasNavigated}
           />
         </div>
 

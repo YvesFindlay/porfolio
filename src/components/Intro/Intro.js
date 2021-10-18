@@ -33,7 +33,7 @@ const Sky = (props) => {
       </Bridge>
 
       <div className="intro__text">
-        <p>Hi there! .., I'm</p>
+        <p>Hi there! &#128075;, I'm</p>
         <h1>Yves</h1>
       </div>
     </main>

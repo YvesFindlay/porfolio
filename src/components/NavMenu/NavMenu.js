@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import { Power1 } from "gsap";
 import {
@@ -6,11 +6,19 @@ import {
   splitText,
   splitTextTimeline,
 } from "../../HelperFunctions/textRevealAnimation";
+import { NavLink } from "react-router-dom";
 
 import "./NavMenu.scss";
 
-const NavMenu = ({ display }) => {
+const NavMenu = ({
+  display,
+  navAnimationProps,
+  onRevertNavAnimation,
+  onSaveDrawerState,
+  onSaveHasNavigatedState,
+}) => {
   let drawerClasses = "side-drawer";
+  const navMenuRef = useRef(null);
 
   if (display) {
     drawerClasses += " side-drawer--open";
@@ -70,49 +78,123 @@ const NavMenu = ({ display }) => {
 
   if (!display) document.body.classList.remove("no-scroll");
 
+  const navigateToSection = (className, block) => {
+    document.querySelector(className).scrollIntoView({
+      scrollBehaviour: "smooth",
+      block,
+    });
+
+    document.body.classList.remove("no-scroll");
+    navMenuRef.current.classList.remove("side-drawer--open");
+
+    onRevertNavAnimation({
+      ...navAnimationProps,
+    });
+
+    const navBtn = document.querySelector(".toggle-button");
+    navBtn.style.opacity = "0";
+
+    onSaveDrawerState();
+
+    setTimeout(() => {
+      navBtn.style.opacity = "1";
+    }, 200);
+  };
+
   return (
-    <nav className={drawerClasses}>
+    <nav ref={navMenuRef} className={drawerClasses}>
       <ul>
         <li>
-          <a className="nav__element" href="/">
+          <NavLink
+            onClick={() => {
+              navigateToSection(".intro");
+            }}
+            className="nav__element"
+            to="/"
+          >
             Home
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a className="nav__element" href="/">
+          <NavLink
+            onClick={() => {
+              navigateToSection(".about__heading", "center");
+              onSaveHasNavigatedState(true);
+            }}
+            className="nav__element"
+            to="/about"
+          >
             About
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a className="nav__element" href="/">
+          <NavLink
+            onClick={() => {
+              navigateToSection(".skills__wrapper", "center");
+            }}
+            className="nav__element"
+            to="/skills"
+          >
+            Skills
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            onClick={() => {
+              navigateToSection(".projects__title", "end");
+            }}
+            className="nav__element"
+            to="/projects"
+          >
             Projects
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a className="nav__element" href="/">
+          <NavLink
+            onClick={() => {
+              navigateToSection(".location", "center");
+            }}
+            className="nav__element"
+            to="/location"
+          >
             Location
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a className="nav__element" href="/">
+          <NavLink
+            onClick={() => {
+              navigateToSection(".contact__header", "end");
+            }}
+            className="nav__element"
+            to="/contact"
+          >
             Contact
-          </a>
+          </NavLink>
         </li>
         <div className="nav-line" />
         <div className="socials">
           <ul>
             <li>
-              <a className="social__links" href="/">
+              <a
+                className="social__links"
+                href="www.linkedin.com/in/yves-findlay"
+              >
                 IN
               </a>
             </li>
             <li>
-              <a className="social__links" href="/">
+              <a
+                className="social__links"
+                href="https://github.com/YvesFindlay/portfolio.git"
+              >
                 GH
               </a>
             </li>
             <li>
-              <a className="social__links" href="/">
+              <a
+                className="social__links"
+                href="https://twitter.com/FindlayYves"
+              >
                 TW
               </a>
             </li>

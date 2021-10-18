@@ -1,67 +1,73 @@
-import React, { useRef } from 'react';
+import React, { useRef } from "react";
 
-import { gsap } from 'gsap';
+import { gsap } from "gsap";
 
-import './ToggleNavButton.scss';
+import "./ToggleNavButton.scss";
 
 const ToggleNavButton = (props) => {
-    const navLine1 = useRef(null);
-    const navLine2 = useRef(null);
-    const navLine3 = useRef(null);
+  const navLine1 = useRef(null);
+  const navLine2 = useRef(null);
+  const navLine3 = useRef(null);
 
-    const calculatePosition = (height) => {
-        return height / 2 - (height / 20);
-    }
+  const calculatePosition = (height) => {
+    return height / 2 - height / 20;
+  };
 
-    const navProps = {
-        width: '50%',
-        pos: calculatePosition(2),
-        navLine1,
-        navLine2,
-        navLine3
-    }
-   
-    const navHoverAnimation = (animationType) => {
-        const navHoverTl = gsap.timeline({
-            repeat: 0,
-        });
+  const navProps = {
+    width: "50%",
+    pos: calculatePosition(2),
+    navLine1,
+    navLine2,
+    navLine3,
+  };
 
-        animationType === 'enter' && 
-        navHoverTl.to(navLine1.current, {width: '100%'})
-        .to(navLine3.current, {width: '100%'}, "<").duration(0.3);
+  const navHoverTl = gsap.timeline({
+    repeat: 0,
+    repeatDelay: 0,
+  });
 
-      
-        animationType === 'leave' && 
-        navHoverTl.to(navLine1.current, {width: '50%'})
-        .to(navLine3.current, {width: '50%'}, "<").duration(0.3);
-    }
+  const navHoverAnimation = (animationType) => {
+    animationType === "enter" &&
+      navHoverTl
+        .to(navLine1.current, { width: "100%" })
+        .to(navLine3.current, { width: "100%" }, "<");
 
-    const onNavClick = () => {
-        props.onClick();
-        props.onAnimateNav(navProps); 
-    }
+    animationType === "leave" &&
+      navHoverTl
+        .to(navLine1.current, { width: "50%" })
+        .to(navLine3.current, { width: "50%" }, "<");
+  };
 
-    const onNavEnter = () => {
-        if(props.wasClicked) return;
-        navHoverAnimation('enter');
-    }
+  const onNavClick = () => {
+    props.onClick();
+    props.onAnimateNav(navProps);
+  };
 
-    const onNavLeave = () => {
-        if(props.wasClicked) return;
-        navHoverAnimation('leave');
-    }
+  const onNavEnter = () => {
+    // hasNavigated is a flag to determine whether the animation has been run and reset before.
+    if (props.wasClicked) return;
+    //|| props.hasNavigated
+    navHoverAnimation("enter");
+  };
 
-    return(
-        <button
-            onClick={onNavClick} 
-            onMouseEnter={onNavEnter} 
-            onMouseLeave={onNavLeave} 
-            className="toggle-button">
-            <div ref={navLine1} className="toggle-button__line line-1" />
-            <div ref={navLine2} className="toggle-button__line line-2" />
-            <div ref={navLine3} className="toggle-button__line line-3" />
-        </button>
-    )
-}
+  const onNavLeave = () => {
+    if (props.wasClicked) return;
+    //|| props.hasNavigated
+    navHoverAnimation("leave");
+  };
+
+  return (
+    <button
+      onClick={onNavClick}
+      onMouseEnter={onNavEnter}
+      onMouseLeave={onNavLeave}
+      className="toggle-button"
+    >
+      <div ref={navLine1} className="toggle-button__line line-1" />
+      <div ref={navLine2} className="toggle-button__line line-2" />
+      <div ref={navLine3} className="toggle-button__line line-3" />
+    </button>
+  );
+};
 
 export default ToggleNavButton;

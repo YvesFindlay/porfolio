@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
+import { gsap } from "gsap";
 import Nav from "./components/Nav/Nav";
-import SideDrawerNav from "./components/NavMenu/NavMenu";
+import NavMenu from "./components/NavMenu/NavMenu";
 import Backdrop from "./components/Backdrop/Backdrop";
 import Intro from "./components/Intro/Intro";
 import About from "./components/Sections/About/About";
@@ -10,24 +11,32 @@ import Projects from "./components/Sections/Projects/Projects";
 import Contact from "./components/Sections/Contact/Contact";
 import Location from "./components/Sections/Location/Location";
 import Footer from "./components/Sections/Footer/Footer";
-import { gsap } from "gsap";
+import { Route } from "react-router-dom";
 
 import "./App.scss";
 
-const App = () => {
-  // const getInnerWidth = (width) => {
-  //   return window.innerWidth < width;
-  // }
-  // const imgDisplayFlag = getInnerWidth.bind(this, 600);
+const closeNavAnimation = ({ navTl, navLine1, navLine2, navLine3 }) => {
+  navTl
+    .to(navLine3.current, { rotate: 0 }, 0.05)
+    .to(navLine1.current, { rotate: 0 }, "<")
+    .to(navLine2.current, { opacity: 1 }, 0.5)
+    .to(navLine3.current, { y: 0 })
+    .to(navLine1.current, { y: 0 }, "<")
+    .to(navLine1.current, { width: "50%" })
+    .to(navLine3.current, { width: "50%" }, "<")
+    .totalDuration(0.9);
+};
 
+const App = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [wasClicked, setWasClicked] = useState(false);
   const [navAnimation, setNavAnimation] = useState({});
+  const [hasNavigated, setHasNavigated] = useState();
+
+  const navTl = gsap.timeline();
 
   const navClickAnimation = ({ pos, navLine1, navLine2, navLine3 }) => {
     setWasClicked(true);
-
-    const navTl = gsap.timeline();
 
     if (!isDrawerOpen) {
       navTl
@@ -51,15 +60,12 @@ const App = () => {
     }
 
     if (isDrawerOpen) {
-      navTl
-        .to(navLine3.current, { rotate: 0 }, 0.05)
-        .to(navLine1.current, { rotate: 0 }, "<")
-        .to(navLine2.current, { opacity: 1 }, 0.5)
-        .to(navLine3.current, { y: 0 })
-        .to(navLine1.current, { y: 0 }, "<")
-        .to(navLine1.current, { width: "50%" })
-        .to(navLine3.current, { width: "50%" }, "<")
-        .totalDuration(0.9);
+      closeNavAnimation({
+        navTl,
+        navLine1,
+        navLine2,
+        navLine3,
+      });
       setWasClicked(false);
     }
 
@@ -76,35 +82,9 @@ const App = () => {
     setIsDrawerOpen((prevState) => !prevState);
   };
 
-  const backDropClickHandler = () => {
-    navClickAnimation({ ...navAnimation });
-    setIsDrawerOpen(false);
+  const hasNavigatedHandler = (state) => {
+    setHasNavigated(state);
   };
-
-  let backDrop;
-
-  if (isDrawerOpen) {
-    backDrop = (
-      <Backdrop nav={navAnimation} onClickBackdrop={backDropClickHandler} />
-    );
-  }
-
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setIsMobile(
-  //       imgDisplayFlag()
-  //     );
-  //   }
-
-  //   window.addEventListener('resize', handleResize);
-
-  //   return () => {
-  //     window.removeEventListener('resize', handleResize);
-  //   }
-
-  // });
-
-  // console.log(imgDisplayFlag());
 
   return (
     <div className="app">
@@ -113,9 +93,15 @@ const App = () => {
         drawerState={isDrawerOpen}
         onAnimateNav={navClickAnimation}
         wasClicked={wasClicked}
+        hasNavigated={hasNavigated}
       />
-      <SideDrawerNav display={isDrawerOpen} />
-      {backDrop}
+      <NavMenu
+        navAnimationProps={navAnimation}
+        onRevertNavAnimation={closeNavAnimation}
+        onSaveDrawerState={drawerClickHandler}
+        onSaveHasNavigatedState={hasNavigatedHandler}
+        display={isDrawerOpen}
+      />
       <Intro />
       <About />
       <Skills />

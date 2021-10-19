@@ -45,14 +45,15 @@ const About = () => {
       <ScrollDown />
       <div className="about__content">
         <h2 className="about__heading">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, saepe
-          voluptatem veniam asperiores voluptate.
+          Frontend development is my domain, crafting designs and bringing them
+          to life is where you'll find me.
         </h2>
 
         <div className="about__wrapper">
           <div className="about__img-container">
             <img
               src="about-img.jpg"
+              alt="Yves Findlay | Frontend Developer"
               data-img-speed="0.2"
               className="about__img img1"
             />
@@ -60,17 +61,15 @@ const About = () => {
           <div className="about__text-container">
             <p className="about__text">
               {" "}
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum
-              nihil ullam molestiae quam, sequi minus repellendus tenetur
-              commodi accusamus ipsa eligendi, autem facere illo vitae provident
-              rem optio cumque nemo.
+              Linking the world of design and technology, I aim to create an
+              immersive experience for users to interact with. Effiency and
+              scalability is at the heart of my development approach.
             </p>
             <p className="about__text">
               {" "}
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum
-              nihil ullam molestiae quam, sequi minus repellendus tenetur
-              commodi accusamus ipsa eligendi, autem facere illo vitae provident
-              rem optio cumque nemo.
+              Drawing on my creative license I strive to produce the best
+              results I possibly can. Challenging myself constantly to enhance
+              my skillset as an aspiring frontend developer.
             </p>
           </div>
         </div>

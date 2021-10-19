@@ -19,7 +19,6 @@ const Nav = (props) => {
       window.scrollY !== 0 && window.scrollY < 650
         ? setisScrollYZero(false)
         : setisScrollYZero(true);
-      console.log(window.scrollY);
     };
   }, []);
 

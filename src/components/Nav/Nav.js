@@ -15,12 +15,12 @@ const Nav = (props) => {
 
   useEffect(() => {
     window.onscroll = () => {
-      if (props.drawerState) return;
-      window.scrollY !== 0 && window.scrollY < 650
+      const windowScroll = window.scrollY;
+      windowScroll !== 0 && windowScroll < 650
         ? setisScrollYZero(false)
         : setisScrollYZero(true);
     };
-  }, []);
+  }, [!props.drawerState]);
 
   isScrollYZero ? displayNav() : hideNav();
 

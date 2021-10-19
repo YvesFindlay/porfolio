@@ -6,7 +6,6 @@ import {
   splitText,
   splitTextTimeline,
 } from "../../HelperFunctions/textRevealAnimation";
-import { NavLink } from "react-router-dom";
 
 import "./NavMenu.scss";
 
@@ -104,8 +103,8 @@ const NavMenu = ({
   return (
     <nav ref={navMenuRef} className={drawerClasses}>
       <ul>
-        <li>
-          <NavLink
+        {/* <li>
+          <a
             onClick={() => {
               navigateToSection(".intro");
             }}
@@ -113,10 +112,10 @@ const NavMenu = ({
             to="/"
           >
             Home
-          </NavLink>
-        </li>
+          </a>
+        </li> */}
         <li>
-          <NavLink
+          <a
             onClick={() => {
               navigateToSection(".about__heading", "center");
               onSaveHasNavigatedState(true);
@@ -125,10 +124,10 @@ const NavMenu = ({
             to="/about"
           >
             About
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink
+          <a
             onClick={() => {
               navigateToSection(".skills__wrapper", "center");
             }}
@@ -136,10 +135,10 @@ const NavMenu = ({
             to="/skills"
           >
             Skills
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink
+          <a
             onClick={() => {
               navigateToSection(".projects__title", "end");
             }}
@@ -147,10 +146,10 @@ const NavMenu = ({
             to="/projects"
           >
             Projects
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink
+          <a
             onClick={() => {
               navigateToSection(".location", "center");
             }}
@@ -158,10 +157,10 @@ const NavMenu = ({
             to="/location"
           >
             Location
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink
+          <a
             onClick={() => {
               navigateToSection(".contact__header", "end");
             }}
@@ -169,7 +168,7 @@ const NavMenu = ({
             to="/contact"
           >
             Contact
-          </NavLink>
+          </a>
         </li>
         <div className="nav-line" />
         <div className="socials">

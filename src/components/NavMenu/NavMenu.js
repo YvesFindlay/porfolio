@@ -14,7 +14,7 @@ const NavMenu = ({
   navAnimationProps,
   onRevertNavAnimation,
   onSaveDrawerState,
-  onSaveHasNavigatedState,
+  // onSaveHasNavigatedState,
 }) => {
   let drawerClasses = "side-drawer";
   const navMenuRef = useRef(null);
@@ -116,9 +116,11 @@ const NavMenu = ({
         </li> */}
         <li>
           <a
-            onClick={() => {
+            href="/"
+            onClick={(evt) => {
+              evt.preventDefault();
               navigateToSection(".about__heading", "center");
-              onSaveHasNavigatedState(true);
+              // onSaveHasNavigatedState(true);
             }}
             className="nav__element"
             to="/about"
@@ -128,7 +130,9 @@ const NavMenu = ({
         </li>
         <li>
           <a
-            onClick={() => {
+            href="/"
+            onClick={(evt) => {
+              evt.preventDefault();
               navigateToSection(".skills__wrapper", "center");
             }}
             className="nav__element"
@@ -139,7 +143,9 @@ const NavMenu = ({
         </li>
         <li>
           <a
-            onClick={() => {
+            href="/"
+            onClick={(evt) => {
+              evt.preventDefault();
               navigateToSection(".projects__title", "end");
             }}
             className="nav__element"
@@ -150,7 +156,9 @@ const NavMenu = ({
         </li>
         <li>
           <a
-            onClick={() => {
+            href="/"
+            onClick={(evt) => {
+              evt.preventDefault();
               navigateToSection(".location", "center");
             }}
             className="nav__element"
@@ -161,7 +169,9 @@ const NavMenu = ({
         </li>
         <li>
           <a
-            onClick={() => {
+            href="/"
+            onClick={(evt) => {
+              evt.preventDefault();
               navigateToSection(".contact__header", "end");
             }}
             className="nav__element"

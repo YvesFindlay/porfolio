@@ -1,3 +1,4 @@
+$breakpoint-xs: 280;
 $breakpoint-splus: 600px;
 $breakpoint-mplus: 650px;
 $breakpoint-lplus: 800px;
@@ -29,14 +30,12 @@ $color-dark-bg: #1b1b2d;
     padding-bottom: 3rem;
   }
 
-  .about__header {
+  .about__content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: relative;
-    z-index: 2;
-    font-size: 1.6rem;
+    font-size: 2rem;
 
     @include min-media($breakpoint-lplus) {
       max-width: 2000px;
@@ -48,8 +47,7 @@ $color-dark-bg: #1b1b2d;
   }
 
   .about__heading {
-    font-size: clamp(4.25rem, 6vw, 7vw);
-    width: 100%;
+    font-size: clamp(3.5rem, 7.8vw, 9vw);
     text-align: center;
     font-weight: 400;
 
@@ -58,25 +56,38 @@ $color-dark-bg: #1b1b2d;
     }
   }
 
-  .about__text-container {
-    justify-self: flex-start;
-    display: inline-block;
+  .about__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    color: $color-primary-purple;
-    font-size: 2rem;
-    margin: 2rem 0 3rem 0;
-    max-width: 400px;
+  }
+
+  .about__text-container {
+    margin: 10vw 0 0 20vw;
+    max-width: 300px;
+    position: relative;
+
+    @include max-media(375px) {
+      margin-left: 2.5rem;
+    }
 
     @include min-media($breakpoint-splus) {
       line-height: 2.6rem;
-      margin: 10vw 0 0 30vw;
+      margin: 10vw 0 0 38vw;
       max-width: 400px;
     }
 
-    @include min-media($breakpoint-xlplus) {
-      width: 32vw;
-      transform: translate(39%, -80%);
-      margin: 6rem 0 0 0;
+    @include min-media($breakpoint-lplus) {
+      max-width: 500px;
+      left: 3%;
+      padding-bottom: 30rem;
+    }
+
+    @include min-media(900px) {
+      margin-top: -5%;
+      left: -3%;
     }
 
     p {
@@ -91,27 +102,28 @@ $color-dark-bg: #1b1b2d;
   .img1 {
     display: block;
     position: relative;
+    top: 40%;
     height: 260px;
     width: 200px;
     z-index: 1;
     align-self: flex-start;
-    transform: translateY(100%);
+    transform: translateY(170%);
     left: 2rem;
     margin: 10rem 0;
 
     @include min-media($breakpoint-splus) {
       display: inline-block;
-      transform: translateY(50%);
+      transform: translateY(80%);
       height: 320px;
       width: 250px;
-      left: 10vw;
+      left: 0;
       margin: 23rem 0 3rem;
       margin-right: 45vw;
     }
 
     @include min-media($breakpoint-xlplus) {
-      transform: translateY(110%);
-      left: 15vw;
+      transform: translateY(150%);
+      left: 4vw;
     }
   }
 }

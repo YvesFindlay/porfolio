@@ -11,15 +11,7 @@ export const createSplitText = ({ el, type, linesClass, wordsClass }) => {
   });
 };
 
-export const splitText = ({
-  el,
-  duration,
-  trigger,
-  endTrigger,
-  start,
-  end,
-  delay,
-}) => {
+export const splitText = ({ el, trigger, endTrigger, start, end, delay }) => {
   gsap.from(el, {
     delay,
     stagger: 0.1,

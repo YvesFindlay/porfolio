@@ -7,7 +7,6 @@ const ImgScrollAnimation = ({
   endTrigger,
   start,
   end,
-  markers,
   stagger,
   delay,
 }) => {
@@ -24,7 +23,6 @@ const ImgScrollAnimation = ({
         start,
         end,
         scrub: 1,
-        // markers,
       },
     });
   });

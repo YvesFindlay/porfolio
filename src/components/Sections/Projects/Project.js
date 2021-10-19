@@ -47,7 +47,6 @@ const Project = () => {
           endTrigger: line,
           start: "top-=350px center",
           end: "bottom center",
-          // markers: true
         },
       });
 

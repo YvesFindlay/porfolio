@@ -29,12 +29,11 @@ const About = () => {
       endTrigger: ".about__heading",
       start: "top center",
       end: "bottom center",
-      // markers:true,
     });
 
     imgScrollAnimation({
       delay: 0.4,
-      trigger: ".about__header",
+      trigger: ".about__content",
       endTrigger: ".section__about",
       star: "top center",
       end: "bottom+=300px center",
@@ -44,33 +43,36 @@ const About = () => {
   return (
     <section className="about">
       <ScrollDown />
-      <div className="about__header">
+      <div className="about__content">
         <h2 className="about__heading">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, saepe
           voluptatem veniam asperiores voluptate.
         </h2>
-        <div className="about__img-container">
-          <img
-            src="about-img2.jpg"
-            data-img-speed="0.2"
-            className="about__img img1"
-          />
-        </div>
-        <div className="about__text-container">
-          <p className="about__text">
-            {" "}
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum
-            nihil ullam molestiae quam, sequi minus repellendus tenetur commodi
-            accusamus ipsa eligendi, autem facere illo vitae provident rem optio
-            cumque nemo.
-          </p>
-          <p className="about__text">
-            {" "}
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum
-            nihil ullam molestiae quam, sequi minus repellendus tenetur commodi
-            accusamus ipsa eligendi, autem facere illo vitae provident rem optio
-            cumque nemo.
-          </p>
+
+        <div className="about__wrapper">
+          <div className="about__img-container">
+            <img
+              src="about-img.jpg"
+              data-img-speed="0.2"
+              className="about__img img1"
+            />
+          </div>
+          <div className="about__text-container">
+            <p className="about__text">
+              {" "}
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum
+              nihil ullam molestiae quam, sequi minus repellendus tenetur
+              commodi accusamus ipsa eligendi, autem facere illo vitae provident
+              rem optio cumque nemo.
+            </p>
+            <p className="about__text">
+              {" "}
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum
+              nihil ullam molestiae quam, sequi minus repellendus tenetur
+              commodi accusamus ipsa eligendi, autem facere illo vitae provident
+              rem optio cumque nemo.
+            </p>
+          </div>
         </div>
       </div>
     </section>

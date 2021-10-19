@@ -16,7 +16,10 @@ const Nav = (props) => {
   useEffect(() => {
     window.onscroll = () => {
       if (props.drawerState) return;
-      window.scrollY !== 0 ? setisScrollYZero(false) : setisScrollYZero(true);
+      window.scrollY !== 0 && window.scrollY < 650
+        ? setisScrollYZero(false)
+        : setisScrollYZero(true);
+      console.log(window.scrollY);
     };
   }, []);
 

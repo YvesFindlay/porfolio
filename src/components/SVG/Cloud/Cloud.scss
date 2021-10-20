@@ -49,7 +49,7 @@ $breakpoint-lplus: 800px;
 
   .cloud2,
   .cloud3 {
-    display: none;
+    transform: scaleX(0);
   }
 
   .cloud4 {
@@ -75,7 +75,7 @@ $breakpoint-lplus: 800px;
   .cloud6 {
     top: 40%;
     right: 2%;
-    display: none;
+    transform: scaleX(0);
   }
 }
 
@@ -120,7 +120,7 @@ $breakpoint-lplus: 800px;
   }
 
   .cloud10 {
-    display: none;
+    transform: scaleX(0);
   }
 
   .cloud6 {
@@ -148,6 +148,6 @@ $breakpoint-lplus: 800px;
   .cloud10 {
     top: 26%;
     left: 48%;
-    display: block;
+    transform: scaleX(1);
   }
 }

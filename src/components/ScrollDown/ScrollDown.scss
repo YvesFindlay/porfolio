@@ -15,10 +15,10 @@ $color-text-light: #dedeeb;
   margin: 0 auto;
   font-weight: 400;
   color: #fff;
-  display: none;
+  transform: scaleY(0);
 
   @include min-media($breakpoint-lplus) {
-    display: block;
+    transform: scaleY(1);
     top: 10%;
     left: -1%;
     width: 90px;

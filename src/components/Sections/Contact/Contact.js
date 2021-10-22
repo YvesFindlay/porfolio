@@ -24,8 +24,8 @@ const Contact = () => {
 
     splitText({
       el: h2Split.lines,
-      trigger: ".contact",
-      endTrigger: ".contact",
+      trigger: ".contact__header",
+      endTrigger: ".contact__header",
       start: "top center",
       end: "bottom center",
     });

@@ -9,9 +9,9 @@ const scrollAnimation = ({
   end,
   trigger,
   endTrigger,
-  stagger,
   scrub,
   onUpdate,
+  delay,
 }) => {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -24,7 +24,7 @@ const scrollAnimation = ({
       parseFloat(el.getAttribute("data-speed")) *
       ScrollTrigger.maxScroll(window),
     ease,
-    stagger,
+    delay,
     scrollTrigger: {
       start,
       trigger,

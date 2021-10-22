@@ -70,13 +70,21 @@ const Form = () => {
       let { current: messageDom } = messageRef;
       if (!messageDom.value) messageDom.value = messageDom?.placeholder;
 
-      // Do not commit with this line - holds important details
-      // emailjs.sendForm('gmail', 'template_f9ad2cz', evt.target, 'user_rHCzwgdW41b4eGE02WzDn')
-      //   .then((result) => {
-      //       console.log(result.text);
-      //   }, (error) => {
-      //       console.log(error.text);
-      // });
+      emailjs
+        .sendForm(
+          "gmail",
+          "template_f9ad2cz",
+          evt.target,
+          "user_rHCzwgdW41b4eGE02WzDn"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
     }
 
     console.log(emailState.isValid);

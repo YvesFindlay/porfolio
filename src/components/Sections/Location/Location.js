@@ -47,8 +47,6 @@ const Location = () => {
 
     splitText({
       el: locationPSplit.lines,
-      // delay: 0.1,
-      // stagger: 0.1,
       trigger: ".location__text",
       endTrigger: ".location__text",
       start: "top center",

@@ -46,8 +46,8 @@ $color-text-light: #dedeeb;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 3rem;
-    padding-left: 1.5rem;
+    margin-top: 1.8rem;
+    padding-left: 1rem;
 
     @include min-media($breakpoint-lplus) {
       padding-left: 2rem;
@@ -87,12 +87,16 @@ $color-text-light: #dedeeb;
         transform: scaleX(1);
       }
 
-      @include max-media($breakpoint-l) {
-        font-size: 7.8vw;
+      @include min-media($breakpoint-lplus) {
+        font-size: 5rem;
       }
 
-      @include min-media($breakpoint-lplus) {
-        font-size: 4vw;
+      @include max-media($breakpoint-l) {
+        font-size: 4.8rem;
+      }
+
+      @include max-media($breakpoint-m) {
+        font-size: 3.5rem;
       }
     }
 

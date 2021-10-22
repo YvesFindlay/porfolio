@@ -6,7 +6,6 @@ import {
   splitText,
   splitTextTimeline,
 } from "../../HelperFunctions/textRevealAnimation";
-import { NavLink } from "react-router-dom";
 
 import "./NavMenu.scss";
 
@@ -15,7 +14,7 @@ const NavMenu = ({
   navAnimationProps,
   onRevertNavAnimation,
   onSaveDrawerState,
-  onSaveHasNavigatedState,
+  // onSaveHasNavigatedState,
 }) => {
   let drawerClasses = "side-drawer";
   const navMenuRef = useRef(null);
@@ -104,8 +103,8 @@ const NavMenu = ({
   return (
     <nav ref={navMenuRef} className={drawerClasses}>
       <ul>
-        <li>
-          <NavLink
+        {/* <li>
+          <a
             onClick={() => {
               navigateToSection(".intro");
             }}
@@ -113,63 +112,73 @@ const NavMenu = ({
             to="/"
           >
             Home
-          </NavLink>
-        </li>
+          </a>
+        </li> */}
         <li>
-          <NavLink
-            onClick={() => {
+          <a
+            href="/"
+            onClick={(evt) => {
+              evt.preventDefault();
               navigateToSection(".about__heading", "center");
-              onSaveHasNavigatedState(true);
+              // onSaveHasNavigatedState(true);
             }}
             className="nav__element"
             to="/about"
           >
             About
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink
-            onClick={() => {
+          <a
+            href="/"
+            onClick={(evt) => {
+              evt.preventDefault();
               navigateToSection(".skills__wrapper", "center");
             }}
             className="nav__element"
             to="/skills"
           >
             Skills
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink
-            onClick={() => {
+          <a
+            href="/"
+            onClick={(evt) => {
+              evt.preventDefault();
               navigateToSection(".projects__title", "end");
             }}
             className="nav__element"
             to="/projects"
           >
             Projects
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink
-            onClick={() => {
+          <a
+            href="/"
+            onClick={(evt) => {
+              evt.preventDefault();
               navigateToSection(".location", "center");
             }}
             className="nav__element"
             to="/location"
           >
             Location
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink
-            onClick={() => {
+          <a
+            href="/"
+            onClick={(evt) => {
+              evt.preventDefault();
               navigateToSection(".contact__header", "end");
             }}
             className="nav__element"
             to="/contact"
           >
             Contact
-          </NavLink>
+          </a>
         </li>
         <div className="nav-line" />
         <div className="socials">

@@ -10,7 +10,6 @@ const expandLineAnimation = ({
   endTrigger,
   start,
   end,
-  markers,
   stagger,
   transformOrigin,
   delay,
@@ -24,7 +23,6 @@ const expandLineAnimation = ({
       endTrigger,
       start,
       end,
-      markers,
     },
   });
 

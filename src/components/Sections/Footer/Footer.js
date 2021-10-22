@@ -33,7 +33,6 @@ const Footer = () => {
       endTrigger: ".footer__content",
       start: "top-=200px center",
       end: "bottom center",
-      // markers: true,
     });
 
     const tl = gsap.timeline({
@@ -75,7 +74,6 @@ const Footer = () => {
       endTrigger: ".footer__content",
       start: "top center",
       end: "bottom center",
-      // markers: true,
     });
   }, []);
 
@@ -91,8 +89,12 @@ const Footer = () => {
                   yves.findlay@gmail.com
                 </a>
               </li>
-              <li className="footer__animate-item">telegram link</li>
-              <li className="footer__animate-item">Signal link</li>
+              <li className="footer__animate-item">
+                <a href="https://t.me/yves_findlay">t.me/yves_findlay</a>
+              </li>
+              <li className="footer__animate-item">
+                <a href="live:yves.findlay_1">Skype</a>
+              </li>
             </ul>
           </div>
           <ul className="footer__works">
@@ -106,7 +108,7 @@ const Footer = () => {
             <a href="https://www.linkedin.com/in/yves-findlay">LN</a>
           </li>
           <li className="footer__animate-item">
-            <a href="https://github.com/YvesFindlay/portfolio.git">GH </a>
+            <a href="https://github.com/YvesFindlay">GH </a>
           </li>
           <li className="footer__animate-item">
             {" "}

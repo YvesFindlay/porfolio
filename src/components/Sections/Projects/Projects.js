@@ -21,12 +21,10 @@ const Projects = () => {
 
     splitText({
       el: h1Split.lines,
-      // stagger: 0.2,
       trigger: ".projects",
       endTrigger: ".projects",
       start: "top center",
       end: "bottom center",
-      // markers: true
     });
   }, []);
 

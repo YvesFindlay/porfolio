@@ -100,9 +100,6 @@ const Star = () => {
         const randomSize = `${randomNum(0.3, 0.8)}%`;
         star.style.height = randomSize;
         star.style.width = randomSize;
-
-        // star.style.setProperty('--star-duration', `${Math.ceil(randomNum(1, 5))}s`);
-        // star.style.setProperty('--star-delay', `${Math.ceil(randomNum(1, 5))}s`);
       }
 
       setStarSpeed(star);

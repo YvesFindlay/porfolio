@@ -11,20 +11,10 @@ export const createSplitText = ({ el, type, linesClass, wordsClass }) => {
   });
 };
 
-export const splitText = ({
-  el,
-  duration,
-  trigger,
-  endTrigger,
-  start,
-  end,
-  delay,
-  markers,
-}) => {
+export const splitText = ({ el, trigger, endTrigger, start, end, delay }) => {
   gsap.from(el, {
     delay,
     stagger: 0.1,
-    // duration,
     yPercent: 100,
     ease: "none",
     scrollTrigger: {
@@ -32,7 +22,6 @@ export const splitText = ({
       end,
       trigger,
       endTrigger,
-      // markers,
     },
   });
 };
@@ -45,12 +34,10 @@ export const splitTextTimeline = ({
   start,
   end,
   delay,
-  markers,
 }) => {
   const textRevealTl = gsap.timeline().from(el, {
     delay,
     stagger,
-    // duration: 1,
     yPercent: 100,
     ease: "none",
     scrollTrigger: {
@@ -58,7 +45,6 @@ export const splitTextTimeline = ({
       end,
       trigger,
       endTrigger,
-      markers,
     },
   });
 

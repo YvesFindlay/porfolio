@@ -108,7 +108,7 @@ const Footer = () => {
             <a href="https://www.linkedin.com/in/yves-findlay">LN</a>
           </li>
           <li className="footer__animate-item">
-            <a href="https://github.com/YvesFindlay/portfolio.git">GH </a>
+            <a href="https://github.com/YvesFindlay">GH </a>
           </li>
           <li className="footer__animate-item">
             {" "}

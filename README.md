@@ -1,16 +1,23 @@
 # Yves' Portfolio
 
-Website depicting my recent work, projects etc.
+A portfolio website depicting an insight into who I am, my recent work, projects, current skills and location.
 
-## Project Aims:
+## Functionality
 
-To build a Portfolio site. This project will list my recent works, contact information, location (to a degree) and my availability for employment.
+This portfolio is a based upon a recent interest I've developed in scroll based animations as I aim to deliver a unique experience to all viewers.
 
-## Technologies 
+## Technologies
 
-HTML, CSS, Sass, Javascript and React.
+React, JavaScript, CSS, Sass
+
+## Libraries & Packages
+
+Leaflet,js and React-leaflet - for map api integration (to roughly show my location)
+
+Email.js - email services enabling visitors to the site to email directly for any enquiries.
 
 ## Setup
+
 To run this project, install it locally using npm:
 
 ```

@@ -62,7 +62,7 @@ const About = () => {
             <p className="about__text">
               {" "}
               Linking the world of design and technology, I aim to create an
-              immersive experience for users to interact with. Effiency and
+              immersive experience for users to interact with. Effciency and
               scalability is at the heart of my development approach.
             </p>
             <p className="about__text">

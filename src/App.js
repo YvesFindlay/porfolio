@@ -13,7 +13,9 @@ import Footer from "./components/Sections/Footer/Footer";
 
 import "./App.scss";
 
-const closeNavAnimation = ({ navTl, navLine1, navLine2, navLine3 }) => {
+const closeNavAnimation = ({ navTl, navBtn, navLine1, navLine2, navLine3 }) => {
+  // debounceNavClick(navBtn, false, 900);
+
   navTl
     .to(navLine3.current, { rotate: 0 }, 0.05)
     .to(navLine1.current, { rotate: 0 }, "<")
@@ -30,11 +32,24 @@ const App = () => {
   const [wasClicked, setWasClicked] = useState(false);
   const [navAnimation, setNavAnimation] = useState({});
   const [hasNavigated, setHasNavigated] = useState();
+  // const nav = {
+  //   navTl: gsap.timeline(),
+  // };
 
-  const navTl = gsap.timeline();
-
-  const navClickAnimation = ({ pos, navLine1, navLine2, navLine3 }) => {
+  const navClickAnimation = ({ pos, navBtn, navLine1, navLine2, navLine3 }) => {
+    const navTl = gsap.timeline();
     setWasClicked(true);
+    // const debounceNavClick = (navBtn, state, millis) => {
+    //   setTimeout(() => {
+    //     navBtn.current.disabled = state;
+    //   }, millis);
+    // };
+
+    // Once it's clicked - set set for click count
+
+    // If count is more than 1 return or disable button or delay invocation of nav click animation
+
+    // after 2 seconds of no click, set state back to 0
 
     if (!isDrawerOpen) {
       navTl

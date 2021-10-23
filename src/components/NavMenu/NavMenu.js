@@ -103,8 +103,9 @@ const NavMenu = ({
   return (
     <nav ref={navMenuRef} className={drawerClasses}>
       <ul>
-        {/* <li>
+        <li>
           <a
+            href="/"
             onClick={() => {
               navigateToSection(".intro");
             }}
@@ -113,7 +114,7 @@ const NavMenu = ({
           >
             Home
           </a>
-        </li> */}
+        </li>
         <li>
           <a
             href="/"
@@ -186,7 +187,7 @@ const NavMenu = ({
             <li>
               <a
                 className="social__links"
-                href="www.linkedin.com/in/yves-findlay"
+                href="https://www.linkedin.com/in/yves-findlay"
               >
                 IN
               </a>

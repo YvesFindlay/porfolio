@@ -6,7 +6,7 @@ const cloud = (props) => {
   let cloudClasses = `intro__cloud intro__cloud--color ${props.size} ${props.pos}`;
 
   const cloudGradient = {
-    fillUrl: `url(#paint10_linear)`, //4
+    fillUrl: `url(#paint10_linear)`,
     gradientComponent: (
       <defs>
         <linearGradient

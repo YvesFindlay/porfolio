@@ -87,8 +87,6 @@ const Form = () => {
         );
     }
 
-    console.log(emailState.isValid);
-
     if (!nameState.isValid) {
       nameRef.current.invalidate();
     }
@@ -147,6 +145,7 @@ const Form = () => {
   };
 
   const validateSubjectHandler = (evt) => {
+    evt.preventDefault();
     dispatchSubject({ type: "BLUR" });
 
     if (!subjectState.isValid && !evt.target.value) {

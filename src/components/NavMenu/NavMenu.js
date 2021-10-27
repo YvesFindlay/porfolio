@@ -107,10 +107,9 @@ const NavMenu = ({
           <a
             href="/"
             onClick={() => {
-              navigateToSection(".intro");
+              navigateToSection(".intro", "center");
             }}
             className="nav__element"
-            to="/"
           >
             Home
           </a>
@@ -124,7 +123,6 @@ const NavMenu = ({
               // onSaveHasNavigatedState(true);
             }}
             className="nav__element"
-            to="/about"
           >
             About
           </a>
@@ -137,7 +135,6 @@ const NavMenu = ({
               navigateToSection(".skills__wrapper", "center");
             }}
             className="nav__element"
-            to="/skills"
           >
             Skills
           </a>
@@ -163,7 +160,6 @@ const NavMenu = ({
               navigateToSection(".location", "center");
             }}
             className="nav__element"
-            to="/location"
           >
             Location
           </a>
@@ -176,7 +172,6 @@ const NavMenu = ({
               navigateToSection(".contact__header", "end");
             }}
             className="nav__element"
-            to="/contact"
           >
             Contact
           </a>

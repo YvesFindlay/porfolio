@@ -106,7 +106,8 @@ const NavMenu = ({
         <li>
           <a
             href="/"
-            onClick={() => {
+            onClick={(evt) => {
+              evt.preventDefault();
               navigateToSection(".intro", "center");
             }}
             className="nav__element"
